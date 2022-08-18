@@ -1,10 +1,7 @@
 <script setup lang="ts">
 import { useDark, useToggle } from '@vueuse/core'
-import { storeToRefs } from 'pinia'
 import { testStore } from './store'
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header.vue'
 
 const store = testStore()
 const isDark = useDark()
@@ -12,6 +9,7 @@ const toggleDark = useToggle(isDark)
 </script>
 
 <template>
+    <Header/>
     <a-rate :value="2" />
     <a-button @click="toggleDark()">
       {{ isDark ? 'dark' : 'ligh'}}
