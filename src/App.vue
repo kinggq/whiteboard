@@ -1,22 +1,24 @@
 <script setup lang="ts">
 import { useDark, useToggle } from '@vueuse/core'
-import { testStore } from './store'
+import { themeStore } from './store'
 import Header from './components/Header.vue'
 
-const store = testStore()
+const store = themeStore()
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
 </script>
 
 <template>
+  <n-config-provider :theme="store.naiveTheme">
+  <n-global-style />
     <Header/>
-    <a-rate :value="2" />
-    <a-button @click="toggleDark()">
-      {{ isDark ? 'dark' : 'ligh'}}
-    </a-button>
-    <a-button @click="store.count++">
-      {{ store.count }}
-    </a-button>
+    <n-button @click="store.dark = !store.dark">
+      {{ store.dark ? 'dark' : 'ligh' }}
+    </n-button>
+    <n-card title="卡片">
+      卡片内容
+    </n-card>
+  </n-config-provider>
 </template>
 
 <style scoped>
