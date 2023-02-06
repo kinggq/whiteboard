@@ -1,19 +1,12 @@
 <script lang="ts" setup>
-import { useDark, useToggle } from '@vueuse/core'
+
 import { MenuOption } from 'naive-ui';
 import { ref } from 'vue';
-import { themeStore } from '../store'
 
-const store = themeStore()
-const isDark = useDark()
-store.dark = isDark.value
+import { themeStore } from '@/store';
 
-const toggleDark = useToggle(isDark)
+const appStore = themeStore()
 
-const handleToggleDark = () => {
-  toggleDark()
-  store.dark = isDark.value
-}
 
 const menuOptions: MenuOption[] = [
   {
@@ -67,11 +60,9 @@ const handleClickGithub = () => {
       <tooltip classs="w-50px ml-20px" content="github">
         <div @click="handleClickGithub" class="i-mdi-github text-24px"></div>
       </tooltip>
-      <tooltip classs="w-50px" content="主题模式">
-        <div @click="handleToggleDark" class="i-carbon-sun dark:i-carbon-moon text-24px"></div>
-      </tooltip>
       
     </div>
+    <n-button @click="appStore.showPreference = true">偏好设置1</n-button>
   </header>
 </template>
 <style scoped>
