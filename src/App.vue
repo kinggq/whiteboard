@@ -6,10 +6,9 @@ const store = themeStore()
 </script>
 
 <template>
-  <n-config-provider :theme="store.naiveTheme">
+  <n-config-provider h-full :theme="store.naiveTheme">
     <n-global-style />
     <router-view></router-view>
-    {{ store.showPreference }}
     <Preference v-model:show="store.showPreference" />
   </n-config-provider>
 </template>
