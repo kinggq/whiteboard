@@ -27,11 +27,11 @@ const menuOptions: MenuOption[] = [
   },
   {
     label: '汇报',
-    key: '4',
+    key: '5',
   },
   {
     label: '动态',
-    key: '4',
+    key: '6',
   },
 ]
 
@@ -40,6 +40,18 @@ const activeKey = ref<string | null>('1')
 const handleClickGithub = () => {
   window.open('https://github.com/kinggq/whiteboard', '_blank')
 }
+
+const value = ref('Drive My Car')
+const options = [
+        {
+          label: '偏好设置',
+          value: '偏好设置'
+        },
+        {
+          label: '退出登录',
+          value: '退出登录'
+        },
+    ]
 </script>
 <template>
   <header
@@ -57,12 +69,19 @@ const handleClickGithub = () => {
       <n-input
         class="dark-bg-#3A3A3E "
       />
-      <tooltip classs="w-50px ml-20px" content="github">
+      <!-- <tooltip classs="w-50px ml-20px" content="github">
         <div @click="handleClickGithub" class="i-mdi-github text-24px"></div>
-      </tooltip>
+      </tooltip> -->
+        <n-popselect :options="options" trigger="click">
+            <n-avatar
+                round
+                size="small"
+                src="https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg"
+            />
+        </n-popselect>
       
     </div>
-    <n-button @click="appStore.showPreference = true">偏好设置1</n-button>
+    <!-- <n-button @click="appStore.showPreference = true">偏好设置1</n-button> -->
   </header>
 </template>
 <style scoped>
