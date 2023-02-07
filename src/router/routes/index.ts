@@ -1,5 +1,7 @@
-import Layout from '@/layouts/index.vue'
 import { RouteRecordRaw } from 'vue-router'
+import { getLoginModuleRegExp } from '@/utils'
+import Layout from '@/layouts/index.vue'
+
 export const routes: RouteRecordRaw[] = [
     {
         path: '/',
@@ -8,9 +10,13 @@ export const routes: RouteRecordRaw[] = [
         children: []
     },
     {
-        path: '/login',
+        path: `/login/:module(${getLoginModuleRegExp()})`,
         name: 'login',
         component: () => import('@/views/login/login.vue'),
+        props: route => {
+            const moduleType = route.params.module || 'pwd-login'
+            return { module: moduleType }
+        }
     },
     {
         path: '/whiteboard',
