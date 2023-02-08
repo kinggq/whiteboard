@@ -3,9 +3,9 @@
         <n-card max-w-460px min-w-320px>
             <div>
                 <h1 text-center>Whiteboard</h1>
-                <main>
-                    <h3>账号登录</h3>
-                    <div>
+                <main pt-20px>
+                    <h3 class="text-primary text-18px font-medium">账号登录</h3>
+                    <div pt-24px>
                         <transition>
                             <component :is="activeModule.component"></component>
                         </transition>
