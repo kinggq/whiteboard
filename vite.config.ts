@@ -28,6 +28,9 @@ export default defineConfig({
       theme: {
         brand: {
           
+        },
+        colors: {
+            primary: 'var(--primary-color)'
         }
       },
       shortcuts: {

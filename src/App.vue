@@ -3,6 +3,8 @@ import { themeStore } from './store'
 import Preference from '@/layouts/preference/preference.vue'
 const store = themeStore()
 
+const defaultColor = '#1890ff'
+document.documentElement.style.cssText = `--primary-color: ${defaultColor}`
 </script>
 
 <template>
