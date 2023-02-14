@@ -1,27 +1,36 @@
 import { RouteRecordRaw } from 'vue-router'
 import { getLoginModuleRegExp } from '@/utils'
-import Layout from '@/layouts/index.vue'
 
-export const routes: RouteRecordRaw[] = [
+const ROOT_ROUTE: AuthRoute.Route = {
+    name: 'root',
+    path: '/',
+    redirect: import.meta.env.VITE_ROUTE_HOME_PATH,
+    meta: {
+        title: 'Root'
+    }
+}
+
+export const constantRoutes: AuthRoute.Route[] = [
+    ROOT_ROUTE,
     {
-        path: '/',
-        redirect: '',
-        component: Layout,
-        children: []
-    },
-    {
-        path: `/login/:module(${getLoginModuleRegExp()})`,
+        path: `/login`,
         name: 'login',
-        component: () => import('@/views/login/login.vue'),
+        component: 'self',
         props: route => {
             const moduleType = route.params.module || 'pwd-login'
             return { module: moduleType }
+        },
+        meta: {
+            title: '登陆'
         }
     },
     {
         path: '/whiteboard',
         name: 'whiteboard',
-        component: () => import('@/views/whiteboard/whiteboard.vue'), 
+        component: 'basic', 
+        meta: {
+            title: '白板'
+        }
     }
     // {
     //     path: '/:pathMatch(.*)',
