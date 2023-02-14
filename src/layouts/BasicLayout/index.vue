@@ -4,5 +4,5 @@
     </div>
 </template>
 <script lang="ts" setup>
-import Header from './header/header.vue'
+import Header from '../header/header.vue'
 </script>
