@@ -1,13 +1,18 @@
+import { transformAuthRouteToVueRoutes } from '@/utils'
 import { App } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
-import { routes } from './routes'
+import { createRouterGuard } from './guard'
+import { constantRoutes } from './routes'
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes: transformAuthRouteToVueRoutes(constantRoutes) 
 })
 
-export default router
 export function setupRoute(app: App) {
     app.use(router)
+    createRouterGuard(router)
 }
+
+export default router
+export * from './modules'

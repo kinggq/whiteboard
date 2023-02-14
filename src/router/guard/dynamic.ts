@@ -1,4 +1,4 @@
-import { useAuthStore } from '@/store'
+import { useAuthStore, useRouteStore } from '@/store'
 import { NavigationGuardNext, RouteLocationNormalized } from 'vue-router'
 
 export function createDynamicRouteGuard(
@@ -6,5 +6,7 @@ export function createDynamicRouteGuard(
     from: RouteLocationNormalized,
     next: NavigationGuardNext
 ) {
-    const route = useAuthStore()
+    const route = useRouteStore()
+    route.initAuthRoute() 
+    next()
 }

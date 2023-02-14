@@ -1,4 +1,8 @@
 declare namespace AuthRoute {
+    type RootRoutePath = '/'
+
+    type NotFoundRoutePath = '/:pathMatch(.*)*'
+
     type RootRouteKey = PageRoute.RootRouteKey
 
     type NotFoundRouteKey = PageRoute.NotFoundRouteKey
@@ -7,7 +11,7 @@ declare namespace AuthRoute {
 
     type AllRouteKey = RouteKey | NotFoundRouteKey | RootRouteKey
 
-    type RouteComponentType = 'basic | blank' | 'self'
+    type RouteComponentType = 'basic' | 'blank' | 'self'
 
     type RouteMeta = {
         title: string
@@ -25,7 +29,7 @@ declare namespace AuthRoute {
         component?: RouteComponentType
         children?: Route[]
         meta: RouteMeta
-    }
+    } & Omit<import('vue-router').RouteRecordRaw, 'name' | 'path' | 'redirect' | 'component' | 'children' | 'meta'>
     : never
 
     type RouteModule = Record<string, { default: Route }>
@@ -51,10 +55,10 @@ declare namespace AuthRouteUtils {
 
     // 根据路由 key 获取路由路径
     type GetRoutePath<K extends AuthRoute.AllRouteKey = AuthRoute.AllRouteKey> = K extends AuthRoute.AllRouteKey
-        ? K extends AuthRoute.RouteKey
-            ? AuthRoute.RootRouteKey
+        ? K extends AuthRoute.RootRouteKey
+            ? AuthRoute.RootRoutePath
             : K extends AuthRoute.NotFoundRouteKey
-            ? AuthRoute.NotFoundRouteKey
+            ? AuthRoute.NotFoundRoutePath
             : KeyToPath<K>
         : never
 }
