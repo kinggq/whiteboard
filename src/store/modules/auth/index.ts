@@ -1,9 +1,10 @@
 import { defineStore } from 'pinia';
-import { getToken } from './helpers';
+import { getToken, getUserInfo } from './helpers';
 
 export const useAuthStore = defineStore('auth-store', {
     state: () => ({
-        token: getToken()
+        token: getToken(),
+        userInfo: getUserInfo()
     }),
     getters: {
         isLogin(state) {
