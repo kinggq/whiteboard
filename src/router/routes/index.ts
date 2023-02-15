@@ -25,15 +25,19 @@ export const constantRoutes: AuthRoute.Route[] = [
         }
     },
     {
-        path: '/whiteboard',
-        name: 'whiteboard',
-        component: 'basic', 
+        name: 'not-found',
+        path: '/:pathMatch(.*)*',
+        component: 'blank',
         meta: {
-            title: '白板'
+            title: '未找到'
+        }
+    },
+    {
+        name: '403',
+        path: '/403',
+        component: 'self',
+        meta: {
+            title: '403'
         }
     }
-    // {
-    //     path: '/:pathMatch(.*)',
-    //     component: () => import('@/views/noFound/noFound.vue')
-    // }
 ]

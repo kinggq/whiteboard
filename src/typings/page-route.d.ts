@@ -5,11 +5,12 @@ declare namespace PageRoute {
     type NotFoundRouteKey = 'not-found'
 
     type RouteKey =
-        |   '403'
-        |   '404'
-        |   '500'
-        |   'login'
-        |   'whiteboard'
+        | '403'
+        | '404'
+        | '500'
+        | 'login'
+        | 'whiteboard'
+        | 'management'
 
     type LastDegreeRouteKey = Extract<
         RouteKey,
@@ -18,6 +19,6 @@ declare namespace PageRoute {
         | '500'
         | 'login'
         | 'whiteboard'
-        | 'whiteboard_1'
+        | 'management'
     >
 }

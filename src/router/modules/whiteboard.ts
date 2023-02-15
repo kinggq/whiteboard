@@ -1,4 +1,4 @@
-const whiteboard = {
+const whiteboard: AuthRoute.Route = {
     name: 'whiteboard',
     path: '/whiteboard',
     component: 'basic',

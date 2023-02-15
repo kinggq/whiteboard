@@ -1,4 +1,5 @@
 import type { Router } from "vue-router";
+import { useTitle } from "@vueuse/core";
 import { createPermissionGuard } from "./permission";
 
 export function createRouterGuard(router: Router) {
@@ -7,6 +8,7 @@ export function createRouterGuard(router: Router) {
     })
 
     router.afterEach((to) => {
-        
+        console.log(to)
+        useTitle(to.meta.title)
     })
 }

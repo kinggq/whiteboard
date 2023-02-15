@@ -11,7 +11,7 @@
                 <n-checkbox>记住我</n-checkbox>
                 <n-button :text="true">忘记密码？</n-button>
             </n-space>
-            <n-button :block="true" type="primary" size="large">确定</n-button>
+            <n-button :block="true" type="primary" size="large" @click="$router.push('/whiteboard')">确定</n-button>
         </n-space>
     </n-form>
 </template>

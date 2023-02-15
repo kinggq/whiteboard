@@ -5,14 +5,19 @@ import { createRouterGuard } from './guard'
 import { constantRoutes } from './routes'
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/'),
   routes: transformAuthRouteToVueRoutes(constantRoutes) 
 })
 
-export function setupRoute(app: App) {
+export async function setupRouter(app: App) {
     app.use(router)
     createRouterGuard(router)
+    
+    await router.isReady()
+    
 }
+
+export const routeName = (key: AuthRoute.AllRouteKey) => key
 
 export default router
 export * from './modules'
