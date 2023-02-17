@@ -40,9 +40,10 @@ export const useRouteStore = defineStore('route-store', {
          * 初始化静态路由
          */
         async initStaticRoute() {
-            const auth = useAuthStore()
+            // const auth = useAuthStore()
             // const routes = filterAuthRoutesByUserPermission(StaticRoutes, auth.userInfo.userRole)
             this.handleAuthRoute(StaticRoutes)
+            this.isInitAuthRoute = true
         },
         /**
          * 初始化权限路由

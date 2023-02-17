@@ -20,6 +20,7 @@ declare namespace AuthRoute {
         keepAlive?: boolean
         order?: number
         permissions?: Auth.RoleType[]
+        requireAuth?: boolean
     }
 
     type Route<K extends AllRouteKey = AllRouteKey> = K extends AllRouteKey

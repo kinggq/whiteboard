@@ -9,10 +9,9 @@ import { themeStore } from '@/store'
 
 const store = themeStore()
 const isDark = useDark()
-store.dark = isDark.value
-const toggleDark = useToggle(isDark)
+
 const handleToggleDark = () => {
-  toggleDark()
-  store.dark = isDark.value
+    store.toggleDark()
+    useToggle(isDark)()
 }
 </script>

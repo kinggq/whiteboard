@@ -54,7 +54,7 @@ const options = [
     ]
 </script>
 <template>
-  <header
+  <n-layout-header
     flex-between
     h-60px
     pl-20px
@@ -81,8 +81,8 @@ const options = [
         </n-popselect>
       
     </div>
-    <!-- <n-button @click="appStore.showPreference = true">偏好设置1</n-button> -->
-  </header>
+    <n-button @click="appStore.showPreference = true">偏好设置1</n-button>
+  </n-layout-header>
 </template>
 <style scoped>
 .dark header {

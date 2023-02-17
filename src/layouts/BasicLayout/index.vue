@@ -1,8 +1,15 @@
 <template>
-    <div class="app-container">
-        <Header />
-    </div>
+    <n-layout class="app-container h-full">
+        <article h-full flex-col>
+            <AppHeader />
+            <n-layout-content flex-1>
+                <router-view h-full v-slot="{ Component, route }">
+                    <component :is="Component" :key="route.fullPath" />
+                </router-view>
+            </n-layout-content>
+        </article>
+    </n-layout>
 </template>
-<script lang="ts" setup>
-import Header from '../header/header.vue'
+<script setup lang="ts">
+import AppHeader from '../header/header.vue'
 </script>
