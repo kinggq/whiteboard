@@ -12,7 +12,7 @@ declare namespace AuthRoute {
     type AllRouteKey = RouteKey | NotFoundRouteKey | RootRouteKey
 
     type RouteComponentType = 'basic' | 'blank' | 'self'
-
+    
     type RouteMeta = {
         title: string
         icon?: string
@@ -21,6 +21,7 @@ declare namespace AuthRoute {
         order?: number
         permissions?: Auth.RoleType[]
         requireAuth?: boolean
+        singleLayout?: Extract<RouteComponentType, 'basic' | 'blank'>
     }
 
     type Route<K extends AllRouteKey = AllRouteKey> = K extends AllRouteKey

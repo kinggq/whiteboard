@@ -42,4 +42,10 @@ export function useRouterPush(inSetup = true) {
             toHome()
         }
     }
+
+    return {
+        routerPush,
+        toHome,
+        toLoginRedirect
+    }
 }

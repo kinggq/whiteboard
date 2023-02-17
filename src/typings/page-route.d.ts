@@ -19,6 +19,5 @@ declare namespace PageRoute {
         | '500'
         | 'login'
         | 'whiteboard'
-        | 'management'
     >
 }

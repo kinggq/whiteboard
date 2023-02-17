@@ -1,10 +1,11 @@
 const whiteboard: AuthRoute.Route = {
     name: 'whiteboard',
     path: '/whiteboard',
-    component: 'basic',
+    component: 'self',
     children: [],
     meta: {
-        title: '白板'
+        title: '白板',
+        singleLayout: 'basic'
     }
 }
 

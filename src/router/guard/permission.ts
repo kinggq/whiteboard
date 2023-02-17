@@ -1,5 +1,5 @@
 import { useAuthStore } from '@/store'
-import { exeStrategyActions } from '@/utils'
+import { exeStrategyActions, localStg } from '@/utils'
 import { NavigationGuardNext, RouteLocationNormalized } from 'vue-router'
 import { routeName } from '..'
 import { createDynamicRouteGuard } from './dynamic'
@@ -11,23 +11,44 @@ export async function createPermissionGuard(
 ) {
    
     const permission = await createDynamicRouteGuard(to, from, next)
-    console.log(permission)
+
     if (!permission) return
 
     const auth = useAuthStore()
+    const isLogin = Boolean(localStg.get('token'))
     const permissions = to.meta.permissions || []
-    console.log(permissions)
+    const needLogin = Boolean(permissions.length)
+ 
     const hasPermission = !permissions.length || permissions.includes(auth.userInfo.userRole)
-    console.log(hasPermission)
+   console.log(isLogin)
     const actions: Common.StrategyAction[] = [
         [
-            hasPermission,
+            isLogin && to.name === routeName('login'),
+            () => {
+                next({ name: routeName('root') })
+            }
+        ],
+        [
+            !needLogin,
             () => {
                 next()
             }
         ],
         [
-            !hasPermission,
+            !isLogin && needLogin,
+            () => {
+                const redirect = to.fullPath
+                next({ name: routeName('login'), query: { redirect } })
+            }
+        ],
+        [
+            isLogin && needLogin && hasPermission,
+            () => {
+                next()
+            }
+        ],
+        [
+            isLogin && needLogin && !hasPermission,
             () => {
                 next({ name: routeName('403') })
             }
