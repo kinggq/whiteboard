@@ -1,6 +1,6 @@
 <template>
     <div flex justify-center items-center h-full>
-        <n-card max-w-460px min-w-320px>
+        <n-card max-w-400px min-w-320px rounded-10px>
             <div>
                 <h1 text-center>Whiteboard</h1>
                 <main pt-20px>
