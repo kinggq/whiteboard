@@ -1,7 +1,7 @@
 <template>
     <n-layout class="app-container h-full">
         <article h-full flex-col>
-            <AppHeader />
+            <GlobalHeader />
             <n-layout-content flex-1>
                 <router-view h-full v-slot="{ Component, route }">
                     <component :is="Component" :key="route.fullPath" />
@@ -11,5 +11,5 @@
     </n-layout>
 </template>
 <script setup lang="ts">
-import AppHeader from '../header/header.vue'
+import GlobalHeader from '../components/GlobalHeader/index.vue'
 </script>
