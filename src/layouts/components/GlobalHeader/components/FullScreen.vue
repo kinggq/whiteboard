@@ -1,5 +1,5 @@
 <template>
-    <hover-container w-40px h-full content="全屏" @click="toggle">
+    <hover-container w-40px content="全屏" @click="toggle">
         <icon-material-symbols:fullscreen-exit v-if="isFullscreen" text-22px />
         <icon-material-symbols:fullscreen v-else text-22px />
         

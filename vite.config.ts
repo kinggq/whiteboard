@@ -8,6 +8,7 @@ import Icons from 'unplugin-icons/vite'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import IconsResolver from 'unplugin-icons/resolver'
+import DefineOptions from 'unplugin-vue-define-options/vite'
 // import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -19,6 +20,7 @@ export default defineConfig({
   },
   plugins: [
     vue(),
+    DefineOptions(),
     Components({
       resolvers: [NaiveUiResolver(), IconsResolver({ customCollections: ['custom'], componentPrefix: 'icon' })],
     }),

@@ -33,6 +33,7 @@
     "unocss": "^0.45.7",
     "unplugin-icons": "^0.15.3",
     "unplugin-vue-components": "^0.22.4",
+    "unplugin-vue-define-options": "^1.2.2",
     "vfonts": "^0.0.3",
     "vite": "^3.0.7",
     "vite-plugin-svg-icons": "^2.0.1",
