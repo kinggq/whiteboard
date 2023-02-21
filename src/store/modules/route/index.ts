@@ -18,6 +18,10 @@ export const useRouteStore = defineStore('route-store', {
          * @param name 
          * @returns 
          */
+        isConstantRoute(name: AuthRoute.AllRouteKey) {
+            const constantRouteNames = getConstantRouteNames(constantRoutes)
+            return constantRouteNames.includes(name)
+        },
         isValidConstantRoute(name: AuthRoute.AllRouteKey) {
             const NOT_FOUND_PAGE_NAME = 'not-found'
             const constantRouteNames = getConstantRouteNames(constantRoutes)
@@ -28,13 +32,10 @@ export const useRouteStore = defineStore('route-store', {
          * @param routes 
          */
         handleAuthRoute(routes: AuthRoute.Route[]) {
-            console.log('routes:', routes)
             const vueRoutes = transformAuthRouteToVueRoutes(routes)
-            console.log('vueRoutes:', vueRoutes)
             vueRoutes.forEach(route => {
                 router.addRoute(route)
             })
-            
         },
         /**
          * 初始化静态路由
@@ -50,6 +51,23 @@ export const useRouteStore = defineStore('route-store', {
          */
         async initAuthRoute() {
            await this.initStaticRoute()
+        },
+        /**
+         * 重置路由
+         */
+        resetRouteStore() {
+            this.resetRoutes()
+            this.$reset()
+        },
+        resetRoutes() {
+            const routes = router.getRoutes()
+            routes.forEach(route => {
+                const name = (route.name || 'root') as AuthRoute.AllRouteKey
+                console.log('!this.isConstantRoute(name)', name, this.isConstantRoute(name))
+                if (!this.isConstantRoute(name)) {
+                    router.removeRoute(name)
+                }
+            })
         }
     }
 })

@@ -12,3 +12,8 @@ export function getUserInfo() {
     }
     return localStg.get('userInfo') || emptyInfo
 }
+
+export function clearAuthStorage() {
+    localStg.remove('token')
+    localStg.remove('userInfo')
+}

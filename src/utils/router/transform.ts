@@ -42,7 +42,7 @@ export function transformAuthRouteToVueRoute(route: AuthRoute.Route){
             const layout = route.meta.singleLayout === 'basic' ? getLayoutComponent('basic') : getLayoutComponent('blank')
             
             const parentRoute: RouteRecordRaw = {
-                path: itemRoute.path,
+                path: `${itemRoute.path}-parent`,
                 component: layout,
                 redirect: route.path,
                 children: [itemRoute]

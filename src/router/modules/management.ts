@@ -4,7 +4,8 @@ const management: AuthRoute.Route = {
     component: 'basic',
     meta: {
         title: '管理员',
-        permissions: ['super', 'admin']
+        permissions: ['super', 'admin'],
+        requireAuth: true
     }
 }
 

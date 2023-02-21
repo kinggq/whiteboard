@@ -27,7 +27,8 @@ export async function createDynamicRouteGuard(
         await route.initAuthRoute()
 
         if(to.name === routeName('not-found')) {
-            next({ path: to.fullPath, replace: true })
+            const path = to.redirectedFrom?.name === 'root' ? '/' : to.fullPath
+            next({ path, replace: true, query: to.query, hash: to.hash })
             return false
         }
     }

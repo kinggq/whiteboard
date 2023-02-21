@@ -12,12 +12,13 @@
 </template>
 <script lang="ts" setup>
 import { defineComponent, h } from 'vue'
-import { useNotification } from 'naive-ui'
+import { useNotification, useDialog } from 'naive-ui'
 
 const NaiveProviderContent = defineComponent({
     name: 'NaiveProviderContent',
     setup() {
         window.$notification = useNotification()
+        window.$dialog = useDialog()
     },
     render() {
         return h('div')

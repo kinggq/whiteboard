@@ -1,8 +1,10 @@
 import { useRouterPush } from '@/composables';
+import router from '@/router';
 import { localStg } from '@/utils';
 import { defineStore } from 'pinia';
+import { unref } from 'vue';
 import { useRouteStore } from '../route';
-import { getToken, getUserInfo } from './helpers';
+import { getToken, getUserInfo, clearAuthStorage } from './helpers';
 
 export const useAuthStore = defineStore('auth-store', {
     state: () => ({
@@ -16,6 +18,19 @@ export const useAuthStore = defineStore('auth-store', {
         }
     },
     actions: {
+        logout() {
+            const { resetRouteStore } = useRouteStore()
+            const { toLogin } = useRouterPush(false)
+            const route = unref(router.currentRoute)
+            
+            clearAuthStorage()
+            this.$reset()
+            resetRouteStore()
+            if (route.meta.requireAuth) {
+                toLogin()
+            }
+            console.log('remove after routes:', router.getRoutes())
+        },
         async login(username: string, password: string) {
             const route = useRouteStore()
             const { toLoginRedirect } = useRouterPush(false)

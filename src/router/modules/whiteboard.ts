@@ -5,7 +5,8 @@ const whiteboard: AuthRoute.Route = {
     children: [],
     meta: {
         title: '白板',
-        singleLayout: 'basic'
+        singleLayout: 'basic',
+        requireAuth: true
     }
 }
 

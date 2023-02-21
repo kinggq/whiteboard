@@ -24,6 +24,23 @@ export function useRouterPush(inSetup = true) {
     }
 
     /**
+     * 跳转到登录页面
+     * @param loginModel 展示的登录模块
+     * @param redirectUrl 重定向地址
+     */
+    function toLogin(loginModel?: EnumType.LoginModuleKey, redirectUrl?: string) {
+        const module = loginModel || 'pwd-login'
+        const routerInfo = {
+            name: routeName('login'),
+            params: { module }
+        }
+
+        const redirect = redirectUrl || route.value.fullPath
+        Object.assign(routerInfo, { query: { redirect } })
+        routerPush(routerInfo)
+    }
+
+    /**
      * 跳转到首页
      * @param newTab 
      */
@@ -45,6 +62,7 @@ export function useRouterPush(inSetup = true) {
 
     return {
         routerPush,
+        toLogin,
         toHome,
         toLoginRedirect
     }
