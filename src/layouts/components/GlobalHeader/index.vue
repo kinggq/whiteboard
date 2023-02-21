@@ -7,7 +7,7 @@
     class="ligh-bg-#EDF5F0"
   >
     <AppLogo />
-    <AppMenu />
+    <GlobalMenu />
     <div flex>
         <GlobalSearch />
         <AppMessage />
@@ -20,14 +20,13 @@
 <script lang="ts" setup>
 import {
     AppLogo,
-    AppMenu,
     AppMessage,
     FullScreen,
     GlobalSearch,
     ThemeMode,
     UserAvatar
 } from './components'
-
+import GlobalMenu from '../GlobalMenu/index.vue'
 </script>
 <style scoped>
 .dark header {

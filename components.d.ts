@@ -13,6 +13,7 @@ declare module '@vue/runtime-core' {
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     HoverContainer: typeof import('./src/components/common/HoverContainer.vue')['default']
     'IconClarity:bellLine': typeof import('~icons/clarity/bell-line')['default']
+    IconCustomLogo: typeof import('~icons/custom/logo')['default']
     'IconIc:outlineDarkMode': typeof import('~icons/ic/outline-dark-mode')['default']
     'IconIc:outlineLightMode': typeof import('~icons/ic/outline-light-mode')['default']
     'IconMaterialSymbols:fullscreen': typeof import('~icons/material-symbols/fullscreen')['default']
@@ -49,7 +50,7 @@ declare module '@vue/runtime-core' {
     NTooltip: typeof import('naive-ui')['NTooltip']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SvgIcon: typeof import('./src/components/custom/SvgIcon.vue')['default']
+    SvgIcon: typeof import('./src/components/common/SvgIcon.vue')['default']
     TheIcon: typeof import('./src/components/custom/TheIcon.vue')['default']
     Tooltip: typeof import('./src/components/common/Tooltip.vue')['default']
   }

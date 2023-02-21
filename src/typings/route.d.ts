@@ -22,6 +22,7 @@ declare namespace AuthRoute {
         permissions?: Auth.RoleType[]
         requireAuth?: boolean
         singleLayout?: Extract<RouteComponentType, 'basic' | 'blank'>
+        activeMenu?: RouteKey
     }
 
     type Route<K extends AllRouteKey = AllRouteKey> = K extends AllRouteKey

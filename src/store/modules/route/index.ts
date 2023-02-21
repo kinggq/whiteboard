@@ -3,14 +3,21 @@ import router, { routes as StaticRoutes } from '@/router'
 import {
     filterAuthRoutesByUserPermission,
     getConstantRouteNames,
+    transformAuthRouteToMenu,
     transformAuthRouteToVueRoutes
 } from '@/utils/'
 import { useAuthStore } from '../auth';
 import { constantRoutes } from '@/router/routes';
 
+interface RouteState {
+    isInitAuthRoute: boolean
+    menus: App.GlobalMenuOption[]
+}
+
 export const useRouteStore = defineStore('route-store', {
-    state: () => ({
-        isInitAuthRoute: false
+    state: (): RouteState => ({
+        isInitAuthRoute: false,
+        menus: []
     }),
     actions: {
         /**
@@ -32,6 +39,7 @@ export const useRouteStore = defineStore('route-store', {
          * @param routes 
          */
         handleAuthRoute(routes: AuthRoute.Route[]) {
+            this.menus = transformAuthRouteToMenu(routes)
             const vueRoutes = transformAuthRouteToVueRoutes(routes)
             vueRoutes.forEach(route => {
                 router.addRoute(route)
