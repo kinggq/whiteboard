@@ -26,7 +26,7 @@ const handleUpdateValue = (key: string, value: MenuOption) => {
 }
 </script>
 <style scoped lang="less">
-/deep/.n-menu-item-content-header {
+:deep(.n-menu-item-content-header) {
     font-size: 16px;
 }
 </style>
