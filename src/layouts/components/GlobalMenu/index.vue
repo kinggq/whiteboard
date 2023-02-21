@@ -1,9 +1,9 @@
 <template>
     <n-menu
+        :value="activeKey"
         :options="menus"
+        :mode="'horizontal'"
         @update:value="handleUpdateValue"
-        v-model:value="activeKey"
-        mode="horizontal"
     />
 </template>
 <script lang="ts" setup>
@@ -14,7 +14,7 @@ import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
-const activeKey = computed(() => route.name as string)
+const activeKey = computed(() => (route.meta.activeMenu ? route.meta.activeMenu : route.name) as string)
 const routeStore = useRouteStore()
 const { routerPush } = useRouterPush()
 
@@ -25,3 +25,8 @@ const handleUpdateValue = (key: string, value: MenuOption) => {
     routerPush(menuitem.routePath)
 }
 </script>
+<style scoped lang="less">
+/deep/.n-menu-item-content-header {
+    font-size: 16px;
+}
+</style>

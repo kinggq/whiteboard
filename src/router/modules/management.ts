@@ -5,7 +5,9 @@ const management: AuthRoute.Route = {
     meta: {
         title: '管理员',
         permissions: ['super', 'admin'],
-        requireAuth: true
+        requireAuth: true,
+        hide: true,
+        order: 10
     }
 }
 

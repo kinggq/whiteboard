@@ -9,5 +9,14 @@ export const views: Record<
     404: () => import('./_builtin/404/index.vue'),
     500: () => import('./_builtin/500/index.vue'),
     login: () => import('./_builtin/login/login.vue'),
-    whiteboard: () => import('./whiteboard/whiteboard.vue')
+    progresses: () => import('./progresses/index.vue'),
+    calendars: () => import('./calendars/index.vue'),
+    reports: () => import('./reports/index.vue'),
+    events: () => import('./events/index.vue'),
+    members: () => import('./members/index.vue'),
+    uncompleted: () => import('./uncompleted/index.vue'),
+    projects: () => import('./projects/index.vue'),
+    projects_list: () => import('./projects/list/index.vue'),
+    projects_items: () => import('./projects/items/index.vue'),
+    projects_creations: () => import('./projects/creations/index.vue'),
 }

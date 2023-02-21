@@ -22,6 +22,14 @@ export function transformAuthRouteToVueRoute(route: AuthRoute.Route){
             },
             self() {
                 itemRoute.component = getViewComponent(route.name as PageRoute.LastDegreeRouteKey)
+            },
+            multi() {
+                if (hasChildren(route)) {
+                    Object.assign(itemRoute, { meta: { ...itemRoute.meta, multi: true } })
+                    delete itemRoute.component
+                } else {
+                    window.console.error('多极路由缺少子路由', route)
+                }
             }
         }
         try {
@@ -51,6 +59,23 @@ export function transformAuthRouteToVueRoute(route: AuthRoute.Route){
         }
     }
     
+    if (hasChildren(route)) {
+        const children = (route.children as AuthRoute.Route[]).map(child => transformAuthRouteToVueRoute(child)).flat()
+        console.log('children:', children)
+        const redirectPath = (children.find(item => !item.meta?.multi)?.path || '/') as AuthRoute.RoutePath
+
+        if (redirectPath === '/') {
+            window.console.error('多级路由没有有效的子路径', route)
+        }
+
+        if(route.component === 'multi') {
+            resultRoutes.push(...children)
+            delete itemRoute.children
+        } else {
+            itemRoute.children = children
+        }
+        itemRoute.redirect = redirectPath
+    }
     
     resultRoutes.push(itemRoute)
     return resultRoutes

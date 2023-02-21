@@ -9,8 +9,17 @@ declare namespace PageRoute {
         | '404'
         | '500'
         | 'login'
-        | 'whiteboard'
+        | 'progresses'
         | 'management'
+        | 'projects'
+        | 'calendars'
+        | 'reports'
+        | 'events'
+        | 'members'
+        | 'uncompleted'
+        | 'projects_list'
+        | 'projects_items'
+        | 'projects_creations'
 
     type LastDegreeRouteKey = Extract<
         RouteKey,
@@ -18,6 +27,15 @@ declare namespace PageRoute {
         | '404'
         | '500'
         | 'login'
-        | 'whiteboard'
+        | 'progresses'
+        | 'projects'
+        | 'calendars'
+        | 'reports'
+        | 'events'
+        | 'members'
+        | 'uncompleted'
+        | 'projects_list'
+        | 'projects_items'
+        | 'projects_creations'
     >
 }
