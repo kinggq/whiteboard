@@ -1,6 +1,6 @@
 <template>
     <n-layout class="app-container h-full">
-        <article h-full flex-col>
+        <article h-full flex flex-col>
             <GlobalHeader />
             <n-layout-content flex-1>
                 <router-view h-full v-slot="{ Component, route }">
