@@ -23,7 +23,7 @@ export default function unplugin() {
             resolvers: [NaiveUiResolver(), IconsResolver({ customCollections: ['custom'], componentPrefix: 'icon' })],
         }),
         createSvgIconsPlugin({
-            iconDirs: [resolve(getSrcPath(), 'assets/svg')],
+            iconDirs: [`${getSrcPath()}assets/svg`],
             symbolId: 'icon-custom-[dir]-[name]',
             inject: 'body-last',
             customDomId: '__CUSTOM_SVG_ICON__',
