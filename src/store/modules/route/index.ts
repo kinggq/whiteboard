@@ -1,23 +1,23 @@
 import { defineStore } from 'pinia';
-import router, { routes as StaticRoutes } from '@/router'
+import router, { routes as StaticRoutes, subMenus } from '@/router'
 import {
-    filterAuthRoutesByUserPermission,
     getConstantRouteNames,
     transformAuthRouteToMenu,
     transformAuthRouteToVueRoutes
 } from '@/utils/'
-import { useAuthStore } from '../auth';
 import { constantRoutes } from '@/router/routes';
 
 interface RouteState {
     isInitAuthRoute: boolean
     menus: App.GlobalMenuOption[]
+    submenus: App.GlobalMenuOption[]
 }
 
 export const useRouteStore = defineStore('route-store', {
     state: (): RouteState => ({
         isInitAuthRoute: false,
-        menus: []
+        menus: [],
+        submenus:[]
     }),
     actions: {
         /**
@@ -40,6 +40,7 @@ export const useRouteStore = defineStore('route-store', {
          */
         handleAuthRoute(routes: AuthRoute.Route[]) {
             this.menus = transformAuthRouteToMenu(routes)
+            this.submenus = transformAuthRouteToMenu(subMenus)
             const vueRoutes = transformAuthRouteToVueRoutes(routes)
             vueRoutes.forEach(route => {
                 router.addRoute(route)

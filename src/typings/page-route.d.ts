@@ -18,8 +18,13 @@ declare namespace PageRoute {
         | 'members'
         | 'uncompleted'
         | 'projects_list'
-        | 'projects_items'
         | 'projects_creations'
+        | 'projects_items'
+        | 'projects_items_list'
+        | 'projects_items_whiteboard'
+        | 'projects_items_timeline'
+        | 'projects_items_files'
+        | 'projects_items_trash'
 
     type LastDegreeRouteKey = Extract<
         RouteKey,
@@ -35,7 +40,12 @@ declare namespace PageRoute {
         | 'members'
         | 'uncompleted'
         | 'projects_list'
-        | 'projects_items'
         | 'projects_creations'
+        | 'projects_items'
+        | 'projects_items_list'
+        | 'projects_items_whiteboard'
+        | 'projects_items_timeline'
+        | 'projects_items_files'
+        | 'projects_items_trash'
     >
 }

@@ -17,6 +17,12 @@ export const views: Record<
     uncompleted: () => import('./uncompleted/index.vue'),
     projects: () => import('./projects/index.vue'),
     projects_list: () => import('./projects/list/index.vue'),
-    projects_items: () => import('./projects/items/index.vue'),
     projects_creations: () => import('./projects/creations/index.vue'),
+    projects_items: () => import('./projects/items/index.vue'),
+    projects_items_list: () => import('./projects/items/list/index.vue'),
+    projects_items_whiteboard: () => import('./projects/items/whiteboard/index.vue'),
+    projects_items_timeline: () => import('./projects/items/timeline/index.vue'),
+    projects_items_files: () => import('./projects/items/files/index.vue'),
+    projects_items_trash: () => import('./projects/items/trash/index.vue'),
+    
 }
