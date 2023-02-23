@@ -13,6 +13,17 @@
 <script lang="ts" setup>
 import { defineComponent, h } from 'vue'
 import { useNotification, useDialog, useLoadingBar } from 'naive-ui'
+import { themeJson } from '@/settings'
+import { useCssVar } from '@vueuse/core'
+import { kebabCase } from 'lodash'
+
+function setupCssVar() {
+    const common = themeJson.naiveThemeOverrides.common
+
+    for (const key in common) {
+        useCssVar(`--${kebabCase(key)}`, document.documentElement).value= (common as any)[key] || ''
+    }
+}
 
 const NaiveProviderContent = defineComponent({
     name: 'NaiveProviderContent',
@@ -20,6 +31,8 @@ const NaiveProviderContent = defineComponent({
         window.$notification = useNotification()
         window.$dialog = useDialog()
         window.$loadingBar = useLoadingBar()
+
+        setupCssVar()
     },
     render() {
         return h('div')
