@@ -37,6 +37,7 @@ export default defineConfig({
       },
       shortcuts: {
         'flex-center': 'flex justify-center items-center',
-        'flex-between': 'flex justify-between items-center'
+        'flex-between': 'flex justify-between items-center',
+        'absolute-lb': 'absolute left-0 bottom-0',
       }
 })

@@ -18,6 +18,7 @@ declare module '@vue/runtime-core' {
     'IconIc:outlineDarkMode': typeof import('~icons/ic/outline-dark-mode')['default']
     'IconIc:outlineLightMode': typeof import('~icons/ic/outline-light-mode')['default']
     'IconMaterialSymbols:add': typeof import('~icons/material-symbols/add')['default']
+    'IconMaterialSymbols:addChart': typeof import('~icons/material-symbols/add-chart')['default']
     'IconMaterialSymbols:fullscreen': typeof import('~icons/material-symbols/fullscreen')['default']
     'IconMaterialSymbols:fullscreenExit': typeof import('~icons/material-symbols/fullscreen-exit')['default']
     'IconMaterialSymbols:settingsOutline': typeof import('~icons/material-symbols/settings-outline')['default']
