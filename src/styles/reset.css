@@ -1,4 +1,12 @@
+:root {
+    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+}
+
 html,
 body {
     margin: 0;
+}
+
+a {
+    text-decoration: none;
 }

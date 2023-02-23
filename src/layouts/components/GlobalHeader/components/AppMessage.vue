@@ -2,7 +2,7 @@
     <n-popover trigger="click" :show-arrow="false">
         <template #trigger>
             <hover-container w-40px relative content="系统消息">
-                <icon-clarity:bell-line text-20px />
+                <icon-clarity:notification-line text-18px />
                 <n-badge :value="10" :max="9" absolute top--2px right-0px></n-badge>
             </hover-container>
         </template>

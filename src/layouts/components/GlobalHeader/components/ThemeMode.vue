@@ -1,7 +1,7 @@
 <template>
     <hover-container w-40px content="主题" @click="handleToggleDark">
-        <icon-ic:outline-dark-mode text-22px v-if="!isDark" />
-        <icon-ic:outline-light-mode text-22px v-else />
+        <icon-mdi-moon-waning-crescent text-18px v-if="isDark" />
+        <icon-mdi-white-balance-sunny text-18px v-else />
     </hover-container>
 </template>
 <script lang="ts" setup>

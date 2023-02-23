@@ -2,7 +2,7 @@
      <n-grid x-gap="12" :cols="4">
         <n-gi v-for="(item, index) in projectList" :key="index">
             <grid-content @click="handleClick(item.id)">
-                <icon-octicon:project text-50px text-primary  />
+                <icon-bx:bxs-bug-alt class="color-[#5ac8fa] text-50px" />
                 <p py-10px text-18px>{{ item.project_name }}</p>
             </grid-content>
         </n-gi>
@@ -27,11 +27,11 @@ const handleClick = (id: number) => {
 }
 
 const projectList = [
-    { project_name: '测试项目', id: 1 },
+    // { project_name: '测试项目', id: 1 },
     { project_name: 'bug管理', id: 2 },
-    { project_name: '产品设计', id: 3 },
-    { project_name: '需求管理', id: 4 },
-    { project_name: '用户反馈', id: 5 },
-    { project_name: '排期', id: 6 },
+    // { project_name: '产品设计', id: 3 },
+    // { project_name: '需求管理', id: 4 },
+    // { project_name: '用户反馈', id: 5 },
+    // { project_name: '排期', id: 6 },
 ]
 </script>
