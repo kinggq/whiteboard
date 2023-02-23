@@ -1,3 +1,3 @@
 <template>
-    <div>403</div>
+    <exception-base type="403" />
 </template>

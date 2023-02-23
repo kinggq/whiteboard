@@ -47,5 +47,13 @@ export const constantRoutes: AuthRoute.Route[] = [
         meta: {
             title: '404'
         }
+    },
+    {
+        name: '500',
+        path: '/500',
+        component: 'self',
+        meta: {
+            title: '500'
+        }
     }
 ]

@@ -1,3 +1,3 @@
 <template>
-    <div>500</div>
+    <exception-base type="500" />
 </template>
