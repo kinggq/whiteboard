@@ -14,6 +14,7 @@
     "@types/node": "^18.7.6",
     "@vueuse/core": "^9.1.0",
     "crypto-js": "^4.1.1",
+    "lodash-es": "^4.17.21",
     "pinia": "^2.0.18",
     "vue": "^3.2.37",
     "vue-router": "^4.1.3"
