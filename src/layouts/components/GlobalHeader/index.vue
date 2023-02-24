@@ -4,7 +4,7 @@
     h-60px
     pl-20px
     pr-20px
-    class="ligh-bg-#EDF5F0"
+    class="bg-#EDF5F0 border-b-1px b-color-[#e3e3e3] dark:bg-dark-bg dark:border-b-none"
   >
     <AppLogo />
     <GlobalMenu />
