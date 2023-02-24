@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div flex flex-col>
         <header class="border-b-1px border-b-[#e3e3e3] dark:border-b-[#212222]">
             <div flex-between>
                 <div>
