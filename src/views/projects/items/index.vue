@@ -11,8 +11,8 @@
                     <Setting />
                 </n-space>
             </div>
-            <Sidebar />
         </header>
+        <Sidebar />
         <router-view></router-view>
     </div>
 </template>
