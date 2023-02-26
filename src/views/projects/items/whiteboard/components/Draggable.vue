@@ -1,6 +1,6 @@
 <template>
      <draggable
-        class="flex h-full px-20px pb-12px"
+        class="flex h-full pl-20px pr-10px pb-12px"
         :list="tasks"
         item-key="stages_id"
         v-bind="{ draggable: '.todo-list' }"
@@ -8,7 +8,7 @@
 
     >
         <template #item="{ element: stage }">
-            <n-card embedded class="todo-list h-full w-300px mr-12px " content-style="padding: 0px;height: 100%;display: flex;flex-direction: column;">
+            <n-card embedded class="todo-list h-full w-320px mr-12px " content-style="padding: 0px;height: 100%;display: flex;flex-direction: column;">
                 <slot name="stage-header" v-bind="stage"></slot>
                 <n-scrollbar class="flex-1 px-10px">
                     <draggable
@@ -18,7 +18,7 @@
                         :group="{ name: 'g2' }"
                     >
                         <template #item="{ element: issue }">
-                            <n-card  class="task-card">
+                            <n-card  class="task-card mb-10px" content-style="padding: 10px">
                                 <slot name="issue-content" v-bind="issue"></slot>
                             </n-card>
                         </template>

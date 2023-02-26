@@ -39,7 +39,8 @@ export default defineConfig({
         'flex-center': 'flex justify-center items-center',
         'flex-between': 'flex justify-between items-center',
         'flex-col-center': 'flex-center flex-col',
-        'absolute-lb': 'absolute left-0 bottom-0',
         'dark-bg': 'var(--n-color)',
+        'absolute-lb': 'absolute left-0 bottom-0',
+        'absolute-rt': 'absolute right-0 top-0',
       }
 })

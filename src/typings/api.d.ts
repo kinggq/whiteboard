@@ -1,4 +1,11 @@
 declare namespace ApiTask {
+    type IssueTagType = 'info' | 'success' | 'warning'
+
+    interface IssueTag {
+        tag_name: string
+        tag_type: IssueTagType
+    }
+
     interface Issue {
         subject: string
         issue_id: number
@@ -9,6 +16,7 @@ declare namespace ApiTask {
         created_date?: string
         deadline?: string
         watch?: number
+        tags?: IssueTag[]
     }
 
     interface Stage {

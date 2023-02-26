@@ -1,5 +1,5 @@
 <template>
-    <div flex-between py-10px>
+    <div flex-between py-10px px-10px>
         <div flex-center>
             <n-badge :value="stage.issues.length" color="#999" />
             <h4 pl-5px>{{ stage.stages_name }}</h4>
