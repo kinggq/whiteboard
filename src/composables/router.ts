@@ -49,6 +49,13 @@ export function useRouterPush(inSetup = true) {
     }
 
     /**
+     * 返回上一级路由
+     */
+    function routerBack() {
+        router.go(-1)
+    }
+
+    /**
      * 登录成功后跳转到重定向的页面
      */
     function toLoginRedirect() {
@@ -64,6 +71,7 @@ export function useRouterPush(inSetup = true) {
         routerPush,
         toLogin,
         toHome,
-        toLoginRedirect
+        toLoginRedirect,
+        routerBack
     }
 }

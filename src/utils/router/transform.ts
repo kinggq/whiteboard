@@ -61,9 +61,9 @@ export function transformAuthRouteToVueRoute(route: AuthRoute.Route){
     
     if (hasChildren(route)) {
         const children = (route.children as AuthRoute.Route[]).map(child => transformAuthRouteToVueRoute(child)).flat()
-        console.log('children:', children)
+        
         const redirectPath = (children.find(item => !item.meta?.multi)?.path || '/') as AuthRoute.RoutePath
-
+        
         if (redirectPath === '/') {
             window.console.error('多级路由没有有效的子路径', route)
         }
@@ -74,7 +74,10 @@ export function transformAuthRouteToVueRoute(route: AuthRoute.Route){
         } else {
             itemRoute.children = children
         }
-        itemRoute.redirect = redirectPath
+
+        if (!itemRoute.meta?.noRedireact) {
+            itemRoute.redirect = redirectPath
+        }
     }
     
     resultRoutes.push(itemRoute)

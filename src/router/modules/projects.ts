@@ -16,8 +16,21 @@ export const projectItemsChildren: AuthRoute.Route[] = [
         meta: {
             title: '白板',
             requireAuth: true,
-            activeMenu: 'projects'
-        }
+            activeMenu: 'projects',
+            noRedireact: true
+        },
+        children: [
+            {
+                name: 'projects_items_whiteboard_detail',
+                path: '/projects/items/whiteboard/detail',
+                component: 'self',
+                meta: {
+                    title: '任务详情',
+                    requireAuth: true,
+                    activeMenu: 'projects',
+                },
+            }
+        ]
     },
     {
         name: 'projects_items_timeline',

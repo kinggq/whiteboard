@@ -34,7 +34,6 @@ import draggable from 'vuedraggable'
 
 interface Props {
     tasks: ApiTask.Stage[]
-    
 }
 
 defineProps<Props>()

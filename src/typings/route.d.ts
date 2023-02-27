@@ -26,6 +26,8 @@ declare namespace AuthRoute {
         singleLayout?: Extract<RouteComponentType, 'basic' | 'blank'>
         activeMenu?: RouteKey
         multi?: boolean
+        // 是否重定向到子路由
+        noRedireact?: boolean
     }
 
     type Route<K extends AllRouteKey = AllRouteKey> = K extends AllRouteKey

@@ -21,6 +21,7 @@ export const views: Record<
     projects_items: () => import('./projects/items/index.vue'),
     projects_items_list: () => import('./projects/items/list/index.vue'),
     projects_items_whiteboard: () => import('./projects/items/whiteboard/index.vue'),
+    projects_items_whiteboard_detail: () => import('./projects/items/whiteboard/detail/index.vue'),
     projects_items_timeline: () => import('./projects/items/timeline/index.vue'),
     projects_items_files: () => import('./projects/items/files/index.vue'),
     projects_items_trash: () => import('./projects/items/trash/index.vue'),

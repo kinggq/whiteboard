@@ -42,5 +42,6 @@ export default defineConfig({
         'dark-bg': 'var(--n-color)',
         'absolute-lb': 'absolute left-0 bottom-0',
         'absolute-rt': 'absolute right-0 top-0',
+        'bb-primary': 'border-b-1px border-b-[#efefef] dark:border-b-[#393939]' 
       }
 })

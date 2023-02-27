@@ -1,7 +1,9 @@
 <template>
     <div flex-1 overflow-hidden>
         <n-scrollbar x-scrollable h-full content-style="height: 100%">
-            <draggable :tasks="result">
+            <draggable
+                :tasks="result"
+            >
                 <template #stage-header="stage">
                     <StageHeader :stage="stage" />
                 </template>
@@ -10,19 +12,17 @@
                 </template>
             </draggable>
         </n-scrollbar>
+        <router-view />
     </div>
 </template>
     
 <script setup lang='ts'>
-import { type } from 'os';
 import { ref } from 'vue'
 import {
     Draggable,
     StageHeader,
     Issue
-} from './components'
-
-const drag = ref(false)
+} from './common'
 
 const result = ref<ApiTask.Stage[]>([
       {
