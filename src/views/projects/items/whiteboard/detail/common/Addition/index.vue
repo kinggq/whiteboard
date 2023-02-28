@@ -1,11 +1,13 @@
 <template>
-    <div flex pt-20px>
+    <n-space pt-20px pl-40px :size="80">
         <Assignee />
-    </div>
+        <Date />
+    </n-space>
 </template>
     
 <script setup lang='ts'>
 import Assignee from './Assignee.vue'
+import Date from './Date.vue'
 </script>
     
 <style>

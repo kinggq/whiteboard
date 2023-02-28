@@ -8,6 +8,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AppLoading: typeof import('./src/components/common/AppLoading.vue')['default']
+    DatePicker: typeof import('./src/components/common/DatePicker.vue')['default']
     ExceptionBase: typeof import('./src/components/common/ExceptionBase.vue')['default']
     GlobalCard: typeof import('./src/components/common/GlobalCard.vue')['default']
     HoverContainer: typeof import('./src/components/common/HoverContainer.vue')['default']
@@ -18,6 +19,7 @@ declare module '@vue/runtime-core' {
     IconCustomNoPermission: typeof import('~icons/custom/no-permission')['default']
     IconCustomNotFound: typeof import('~icons/custom/not-found')['default']
     IconCustomServiceError: typeof import('~icons/custom/service-error')['default']
+    'IconEosIcons:modifiedDateOutlined': typeof import('~icons/eos-icons/modified-date-outlined')['default']
     'IconFluent:arrowSort24Filled': typeof import('~icons/fluent/arrow-sort24-filled')['default']
     IconGridiconsFullscreen: typeof import('~icons/gridicons/fullscreen')['default']
     IconGridiconsFullscreenExit: typeof import('~icons/gridicons/fullscreen-exit')['default']
@@ -36,6 +38,7 @@ declare module '@vue/runtime-core' {
     IconMdiMoonWaningCrescent: typeof import('~icons/mdi/moon-waning-crescent')['default']
     IconMdiWhiteBalanceSunny: typeof import('~icons/mdi/white-balance-sunny')['default']
     'IconMingcute:closeFill': typeof import('~icons/mingcute/close-fill')['default']
+    'IconPh:userCircleThin': typeof import('~icons/ph/user-circle-thin')['default']
     'IconRi:moreFill': typeof import('~icons/ri/more-fill')['default']
     'IconRi:search2Line': typeof import('~icons/ri/search2-line')['default']
     IconUilSearch: typeof import('~icons/uil/search')['default']
@@ -48,6 +51,7 @@ declare module '@vue/runtime-core' {
     NCard: typeof import('naive-ui')['NCard']
     NCheckbox: typeof import('naive-ui')['NCheckbox']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
+    NDatePicker: typeof import('naive-ui')['NDatePicker']
     NDialogProvider: typeof import('naive-ui')['NDialogProvider']
     NDivider: typeof import('naive-ui')['NDivider']
     NDrawer: typeof import('naive-ui')['NDrawer']

@@ -1,14 +1,14 @@
 export const projectItemsChildren: AuthRoute.Route[] = [
-    {
-        name: 'projects_items_list',
-        path: '/projects/items/list',
-        component: 'self',
-        meta: {
-            title: '列表',
-            requireAuth: true,
-            activeMenu: 'projects'
-        }
-    },
+    // {
+    //     name: 'projects_items_list',
+    //     path: '/projects/items/list',
+    //     component: 'self',
+    //     meta: {
+    //         title: '列表',
+    //         requireAuth: true,
+    //         activeMenu: 'projects'
+    //     }
+    // },
     {
         name: 'projects_items_whiteboard',
         path: '/projects/items/whiteboard',
@@ -32,16 +32,16 @@ export const projectItemsChildren: AuthRoute.Route[] = [
             }
         ]
     },
-    {
-        name: 'projects_items_timeline',
-        path: '/projects/items/timeline',
-        component: 'self',
-        meta: {
-            title: '时间线',
-            requireAuth: true,
-            activeMenu: 'projects'
-        }
-    },
+    // {
+    //     name: 'projects_items_timeline',
+    //     path: '/projects/items/timeline',
+    //     component: 'self',
+    //     meta: {
+    //         title: '时间线',
+    //         requireAuth: true,
+    //         activeMenu: 'projects'
+    //     }
+    // },
     {
         name: 'projects_items_files',
         path: '/projects/items/files',

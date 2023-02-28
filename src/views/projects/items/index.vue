@@ -12,12 +12,15 @@
                 </n-space>
             </div>
         </header>
-        <Sidebar />
+        <Sidebar/>
         <router-view></router-view>
     </div>
 </template>
     
 <script setup lang='ts'>
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+import { routeName } from '@/router'
 import {
     Menu,
     Sidebar,
@@ -25,6 +28,14 @@ import {
     Setting
 } from './common'
 
+const route = useRoute()
+
+const showSidebar = computed(() => 
+    route.name === routeName('projects_items_whiteboard' ||
+    route.name === routeName('projects_items_whiteboard_detail')
+))
+
+console.log(route)
 </script>
     
 <style>

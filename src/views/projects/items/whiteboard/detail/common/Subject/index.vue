@@ -14,7 +14,7 @@
             @blur="show = false"
             
         />
-        <div @click="handleFocus" v-else text-18px>测试测试测试测试测试测试测试测试</div>
+        <div @click="handleFocus" v-else text-20px font-bold>测试测试测试测试测试测试测试测试</div>
     </div>
 </template>
     
