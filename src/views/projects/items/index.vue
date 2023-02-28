@@ -12,7 +12,7 @@
                 </n-space>
             </div>
         </header>
-        <Sidebar/>
+        <Sidebar v-show="showSidebar" />
         <router-view></router-view>
     </div>
 </template>
