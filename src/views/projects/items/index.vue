@@ -13,9 +13,14 @@
             </div>
         </header>
         <Sidebar v-show="showSidebar" />
-        <div px-20px py-10px flex-1 overflow-hidden>
+        <div px-20px py-10px flex-1 overflow-hidden v-if="showSidebar">
             <router-view></router-view>
         </div>
+        <n-scrollbar v-else>
+            <div px-20px py-10px flex-1 overflow-hidden>
+                <router-view></router-view>
+            </div>
+        </n-scrollbar>
     </div>
 </template>
     
