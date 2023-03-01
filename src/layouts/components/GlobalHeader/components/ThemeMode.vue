@@ -6,9 +6,9 @@
 </template>
 <script lang="ts" setup>
 import { useDark, useToggle } from '@vueuse/core'
-import { themeStore } from '@/store'
+import { useThemeStore } from '@/store'
 
-const store = themeStore()
+const store = useThemeStore()
 const isDark = useDark()
 
 const handleToggleDark = () => {

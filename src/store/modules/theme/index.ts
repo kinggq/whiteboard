@@ -3,7 +3,7 @@ import { darkTheme } from 'naive-ui'
 import { useDark } from '@vueuse/core'
 import { WritableComputedRef } from 'vue'
 const isDark = useDark()
-export const themeStore = defineStore('theme', {
+export const useThemeStore = defineStore('theme-store', {
   state: () => ({
     isDark,
     showPreference: false
