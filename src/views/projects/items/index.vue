@@ -13,7 +13,9 @@
             </div>
         </header>
         <Sidebar v-show="showSidebar" />
-        <router-view></router-view>
+        <div px-20px py-10px flex-1 overflow-hidden>
+            <router-view></router-view>
+        </div>
     </div>
 </template>
     
@@ -31,11 +33,10 @@ import {
 const route = useRoute()
 
 const showSidebar = computed(() => 
-    route.name === routeName('projects_items_whiteboard' ||
+    route.name === routeName('projects_items_whiteboard') ||
     route.name === routeName('projects_items_whiteboard_detail')
-))
+)
 
-console.log(route)
 </script>
     
 <style>

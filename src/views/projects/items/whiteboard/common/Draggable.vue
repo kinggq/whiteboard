@@ -1,6 +1,6 @@
 <template>
-     <draggable
-        class="flex h-full pl-20px pr-10px pb-12px"
+     <vuedraggable
+        class="flex h-full"
         :list="tasks"
         item-key="stages_id"
         v-bind="{ draggable: '.todo-list' }"
@@ -11,7 +11,7 @@
             <n-card embedded class="todo-list h-full w-320px mr-12px " content-style="padding: 0px;height: 100%;display: flex;flex-direction: column;">
                 <slot name="stage-header" v-bind="stage"></slot>
                 <n-scrollbar class="flex-1 px-10px">
-                    <draggable
+                    <vuedraggable
                         :list="stage.issues"
                         draggable=".task-card"
                         item-key="issue_id"
@@ -22,15 +22,15 @@
                                 <slot name="issue-content" v-bind="issue"></slot>
                             </n-card>
                         </template>
-                    </draggable>
+                    </vuedraggable>
                 </n-scrollbar>
             </n-card>
         </template>
-    </draggable>
+    </vuedraggable>
 </template>
     
 <script setup lang='ts'>
-import draggable from 'vuedraggable'
+import vuedraggable from 'vuedraggable'
 
 interface Props {
     tasks: ApiTask.Stage[]

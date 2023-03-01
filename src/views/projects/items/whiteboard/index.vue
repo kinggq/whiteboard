@@ -1,5 +1,5 @@
 <template>
-    <div flex-1 overflow-hidden>
+    <div h-full overflow-hidden>
         <n-scrollbar x-scrollable h-full content-style="height: 100%">
             <draggable
                 :tasks="tasks"
