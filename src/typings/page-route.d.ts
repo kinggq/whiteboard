@@ -25,6 +25,7 @@ declare namespace PageRoute {
         | 'projects_items_files'
         | 'projects_items_trash'
         | 'projects_items_whiteboard'
+        | 'projects_items_statistics'
         | 'projects_items_whiteboard_detail'
 
     type LastDegreeRouteKey = Extract<
@@ -48,6 +49,7 @@ declare namespace PageRoute {
         | 'projects_items_timeline'
         | 'projects_items_files'
         | 'projects_items_trash'
+        | 'projects_items_statistics'
         | 'projects_items_whiteboard_detail'
     >
 }

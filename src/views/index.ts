@@ -25,5 +25,6 @@ export const views: Record<
     projects_items_timeline: () => import('./projects/items/timeline/index.vue'),
     projects_items_files: () => import('./projects/items/files/index.vue'),
     projects_items_trash: () => import('./projects/items/trash/index.vue'),
+    projects_items_statistics: () => import('./projects/items/statistics/index.vue'),
     
 }

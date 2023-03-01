@@ -43,6 +43,16 @@ export const projectItemsChildren: AuthRoute.Route[] = [
     //     }
     // },
     {
+        name: 'projects_items_statistics',
+        path: '/projects/items/statistics',
+        component: 'self',
+        meta: {
+            title: '任务统计',
+            requireAuth: true,
+            activeMenu: 'projects'
+        }
+    },
+    {
         name: 'projects_items_files',
         path: '/projects/items/files',
         component: 'self',
@@ -52,6 +62,7 @@ export const projectItemsChildren: AuthRoute.Route[] = [
             activeMenu: 'projects'
         }
     },
+    
     {
         name: 'projects_items_trash',
         path: '/projects/items/trash',

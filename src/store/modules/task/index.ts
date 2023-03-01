@@ -33,6 +33,193 @@ export const useTaskStore = defineStore('task-store', {
                         ],
                     },
                     {
+                        "issue_id": 23341,
+                        "subject": "需求提交区规则",
+                        "assignee_id": 1,
+                        "assignee_name": "测试账号",
+                        "created_date": "2020-04-29 12:11:38",
+                        "priority_id": 1,
+                        "deadline": '',
+                        "sort": 0,
+                        "watch": 1,
+                        "tags": [
+                            {
+                                tag_name: '功能需求',
+                                tag_type: 'info'
+                            },
+                        ],
+                    },
+                    {
+                        "issue_id": 23341,
+                        "subject": "需求提交区规则",
+                        "assignee_id": 1,
+                        "assignee_name": "测试账号",
+                        "created_date": "2020-04-29 12:11:38",
+                        "priority_id": 1,
+                        "deadline": '',
+                        "sort": 0,
+                        "watch": 1,
+                        "tags": [
+                            {
+                                tag_name: '功能需求',
+                                tag_type: 'info'
+                            },
+                        ],
+                    },
+                    {
+                        "issue_id": 23341,
+                        "subject": "需求提交区规则",
+                        "assignee_id": 1,
+                        "assignee_name": "测试账号",
+                        "created_date": "2020-04-29 12:11:38",
+                        "priority_id": 1,
+                        "deadline": '',
+                        "sort": 0,
+                        "watch": 1,
+                        "tags": [
+                            {
+                                tag_name: '功能需求',
+                                tag_type: 'info'
+                            },
+                        ],
+                    },
+                    {
+                        "issue_id": 23341,
+                        "subject": "需求提交区规则",
+                        "assignee_id": 1,
+                        "assignee_name": "测试账号",
+                        "created_date": "2020-04-29 12:11:38",
+                        "priority_id": 1,
+                        "deadline": '',
+                        "sort": 0,
+                        "watch": 1,
+                        "tags": [
+                            {
+                                tag_name: '功能需求',
+                                tag_type: 'info'
+                            },
+                        ],
+                    },
+                    {
+                        "issue_id": 23341,
+                        "subject": "需求提交区规则",
+                        "assignee_id": 1,
+                        "assignee_name": "测试账号",
+                        "created_date": "2020-04-29 12:11:38",
+                        "priority_id": 1,
+                        "deadline": '',
+                        "sort": 0,
+                        "watch": 1,
+                        "tags": [
+                            {
+                                tag_name: '功能需求',
+                                tag_type: 'info'
+                            },
+                        ],
+                    },
+                    {
+                        "issue_id": 23341,
+                        "subject": "需求提交区规则",
+                        "assignee_id": 1,
+                        "assignee_name": "测试账号",
+                        "created_date": "2020-04-29 12:11:38",
+                        "priority_id": 1,
+                        "deadline": '',
+                        "sort": 0,
+                        "watch": 1,
+                        "tags": [
+                            {
+                                tag_name: '功能需求',
+                                tag_type: 'info'
+                            },
+                        ],
+                    },
+                    {
+                        "issue_id": 23341,
+                        "subject": "需求提交区规则",
+                        "assignee_id": 1,
+                        "assignee_name": "测试账号",
+                        "created_date": "2020-04-29 12:11:38",
+                        "priority_id": 1,
+                        "deadline": '',
+                        "sort": 0,
+                        "watch": 1,
+                        "tags": [
+                            {
+                                tag_name: '功能需求',
+                                tag_type: 'info'
+                            },
+                        ],
+                    },
+                    {
+                        "issue_id": 23341,
+                        "subject": "需求提交区规则",
+                        "assignee_id": 1,
+                        "assignee_name": "测试账号",
+                        "created_date": "2020-04-29 12:11:38",
+                        "priority_id": 1,
+                        "deadline": '',
+                        "sort": 0,
+                        "watch": 1,
+                        "tags": [
+                            {
+                                tag_name: '功能需求',
+                                tag_type: 'info'
+                            },
+                        ],
+                    },
+                    {
+                        "issue_id": 23341,
+                        "subject": "需求提交区规则",
+                        "assignee_id": 1,
+                        "assignee_name": "测试账号",
+                        "created_date": "2020-04-29 12:11:38",
+                        "priority_id": 1,
+                        "deadline": '',
+                        "sort": 0,
+                        "watch": 1,
+                        "tags": [
+                            {
+                                tag_name: '功能需求',
+                                tag_type: 'info'
+                            },
+                        ],
+                    },
+                    {
+                        "issue_id": 23341,
+                        "subject": "需求提交区规则",
+                        "assignee_id": 1,
+                        "assignee_name": "测试账号",
+                        "created_date": "2020-04-29 12:11:38",
+                        "priority_id": 1,
+                        "deadline": '',
+                        "sort": 0,
+                        "watch": 1,
+                        "tags": [
+                            {
+                                tag_name: '功能需求',
+                                tag_type: 'info'
+                            },
+                        ],
+                    },
+                    {
+                        "issue_id": 23341,
+                        "subject": "需求提交区规则",
+                        "assignee_id": 1,
+                        "assignee_name": "测试账号",
+                        "created_date": "2020-04-29 12:11:38",
+                        "priority_id": 1,
+                        "deadline": '',
+                        "sort": 0,
+                        "watch": 1,
+                        "tags": [
+                            {
+                                tag_name: '功能需求',
+                                tag_type: 'info'
+                            },
+                        ],
+                    },
+                    {
                         "issue_id": 38828,
                         "subject": "测试任务索引是否存在",
                         "assignee_id": 11,
