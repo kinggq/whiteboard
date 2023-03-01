@@ -8,6 +8,10 @@
                     <Subject />
                     <Addition />
                 </div>
+                <div bb-primary py-20px>
+                    <Section />
+                </div>
+                <CommentActivity mt-20px />
             </div>
         </n-card>
     </n-modal>
@@ -19,8 +23,10 @@ import { ref } from 'vue'
 import {
     DetailHeader,
     Subject,
-    Addition
-} from './common'
+    Addition,
+    Section,
+    CommentActivity
+} from './components'
 
 const show = ref(true)
 
