@@ -1,6 +1,6 @@
 <template>
     <n-popselect v-model:value="value" :options="options" trigger="click">
-        <n-button size="small">
+        <n-button size="small" >
             {{ value || '弹出选择' }}
             <template #icon>
                 <n-icon>

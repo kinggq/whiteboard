@@ -1,5 +1,5 @@
 <template>
-    <n-button quaternary size="small">
+    <n-button quaternary size="small" color="#aaa">
         <template #icon>
             <n-icon>
                 <icon-charm:square-tick />
