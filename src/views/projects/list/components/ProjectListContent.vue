@@ -7,7 +7,7 @@
             </grid-content>
         </n-gi>
         <n-gi>
-            <grid-content>
+            <grid-content class="color-[#aaa]" @click="handleAddProject">
                 <icon-material-symbols:add-chart text-50px />
                 <p py-10px text-18px>创建项目</p>
             </grid-content>
@@ -25,6 +25,11 @@ const { routerPush } = useRouterPush()
 const handleClick = (id: number) => {
     routerPush({ name: routeName('projects_items'), query: { id } })
 }
+
+const handleAddProject = () => {
+    window.$message?.info('努力搬砖🧱中')
+}
+
 
 const projectList = [
     // { project_name: '测试项目', id: 1 },
