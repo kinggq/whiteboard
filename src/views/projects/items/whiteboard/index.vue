@@ -9,6 +9,7 @@
                 </template>
                 <template #issue-content="issue">
                     <Issue :issue="issue" />
+                    
                 </template>
             </draggable>
         </n-scrollbar>

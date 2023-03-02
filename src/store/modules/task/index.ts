@@ -400,6 +400,19 @@ export const useTaskStore = defineStore('task-store', {
         setAssignee(assignee_name: string, assignee_id: number) {
             this.detail.assignee_name = assignee_name
             this.detail.assignee_id = assignee_id
+        },
+        setTask(subject: string, stage_id: number) {
+
+            const index = this.tasks.findIndex(task => task.stages_id === stage_id)
+            console.log(stage_id)
+            this.tasks[index].issues.push({
+                "issue_id": Date.now(),
+                "subject": subject,
+                "created_date": "2020-04-29 12:11:38",
+                "priority_id": 1,
+                "deadline": '',
+                "sort": 0,
+            })
         }
     }
 })
