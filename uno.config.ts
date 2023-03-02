@@ -36,12 +36,16 @@ export default defineConfig({
           }
       },
       shortcuts: {
+        'wh-full': 'w-full h-full',
         'flex-center': 'flex justify-center items-center',
         'flex-between': 'flex justify-between items-center',
         'flex-col-center': 'flex-center flex-col',
         'dark-bg': 'var(--n-color)',
         'absolute-lb': 'absolute left-0 bottom-0',
         'absolute-rt': 'absolute right-0 top-0',
-        'bb-primary': 'border-b-1px border-b-[#efefef] dark:border-b-[#393939]' 
+        'absolute-center': 'absolute-lt flex-center wh-full',
+        'bb-primary': 'border-b-1px border-b-[#efefef] dark:border-b-[#393939]',
+        'fixed-lt': 'fixed left-0 top-0',
+        'fixed-center': 'fixed-lt flex-center wh-full',
       }
 })
