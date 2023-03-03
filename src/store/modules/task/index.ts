@@ -1,10 +1,14 @@
 import { defineStore } from 'pinia'
+import { EnumTaskStatus } from '@/enum'
+
+type StatusType  = typeof EnumTaskStatus[keyof typeof EnumTaskStatus]
 
 interface State {
-    tasks: ApiTask.Stage[],
+    tasks: ApiTask.Stage[]
     detail: ApiTask.IssueDetail
-    annexFile: ApiTask.IssueAnnexFile[],
+    annexFile: ApiTask.IssueAnnexFile[]
     comments: ApiTask.IssueComment[]
+    status: StatusType
 }
 
 export const useTaskStore = defineStore('task-store', {
@@ -15,193 +19,6 @@ export const useTaskStore = defineStore('task-store', {
                 "stages_name": "功能验证清单",
                 "sort": 40,
                 "issues": [
-                    {
-                        "issue_id": 23341,
-                        "subject": "需求提交区规则",
-                        "assignee_id": 1,
-                        "assignee_name": "测试账号",
-                        "created_date": "2020-04-29 12:11:38",
-                        "priority_id": 1,
-                        "deadline": '',
-                        "sort": 0,
-                        "watch": 1,
-                        "tags": [
-                            {
-                                tag_name: '功能需求',
-                                tag_type: 'info'
-                            },
-                        ],
-                    },
-                    {
-                        "issue_id": 23341,
-                        "subject": "需求提交区规则",
-                        "assignee_id": 1,
-                        "assignee_name": "测试账号",
-                        "created_date": "2020-04-29 12:11:38",
-                        "priority_id": 1,
-                        "deadline": '',
-                        "sort": 0,
-                        "watch": 1,
-                        "tags": [
-                            {
-                                tag_name: '功能需求',
-                                tag_type: 'info'
-                            },
-                        ],
-                    },
-                    {
-                        "issue_id": 23341,
-                        "subject": "需求提交区规则",
-                        "assignee_id": 1,
-                        "assignee_name": "测试账号",
-                        "created_date": "2020-04-29 12:11:38",
-                        "priority_id": 1,
-                        "deadline": '',
-                        "sort": 0,
-                        "watch": 1,
-                        "tags": [
-                            {
-                                tag_name: '功能需求',
-                                tag_type: 'info'
-                            },
-                        ],
-                    },
-                    {
-                        "issue_id": 23341,
-                        "subject": "需求提交区规则",
-                        "assignee_id": 1,
-                        "assignee_name": "测试账号",
-                        "created_date": "2020-04-29 12:11:38",
-                        "priority_id": 1,
-                        "deadline": '',
-                        "sort": 0,
-                        "watch": 1,
-                        "tags": [
-                            {
-                                tag_name: '功能需求',
-                                tag_type: 'info'
-                            },
-                        ],
-                    },
-                    {
-                        "issue_id": 23341,
-                        "subject": "需求提交区规则",
-                        "assignee_id": 1,
-                        "assignee_name": "测试账号",
-                        "created_date": "2020-04-29 12:11:38",
-                        "priority_id": 1,
-                        "deadline": '',
-                        "sort": 0,
-                        "watch": 1,
-                        "tags": [
-                            {
-                                tag_name: '功能需求',
-                                tag_type: 'info'
-                            },
-                        ],
-                    },
-                    {
-                        "issue_id": 23341,
-                        "subject": "需求提交区规则",
-                        "assignee_id": 1,
-                        "assignee_name": "测试账号",
-                        "created_date": "2020-04-29 12:11:38",
-                        "priority_id": 1,
-                        "deadline": '',
-                        "sort": 0,
-                        "watch": 1,
-                        "tags": [
-                            {
-                                tag_name: '功能需求',
-                                tag_type: 'info'
-                            },
-                        ],
-                    },
-                    {
-                        "issue_id": 23341,
-                        "subject": "需求提交区规则",
-                        "assignee_id": 1,
-                        "assignee_name": "测试账号",
-                        "created_date": "2020-04-29 12:11:38",
-                        "priority_id": 1,
-                        "deadline": '',
-                        "sort": 0,
-                        "watch": 1,
-                        "tags": [
-                            {
-                                tag_name: '功能需求',
-                                tag_type: 'info'
-                            },
-                        ],
-                    },
-                    {
-                        "issue_id": 23341,
-                        "subject": "需求提交区规则",
-                        "assignee_id": 1,
-                        "assignee_name": "测试账号",
-                        "created_date": "2020-04-29 12:11:38",
-                        "priority_id": 1,
-                        "deadline": '',
-                        "sort": 0,
-                        "watch": 1,
-                        "tags": [
-                            {
-                                tag_name: '功能需求',
-                                tag_type: 'info'
-                            },
-                        ],
-                    },
-                    {
-                        "issue_id": 23341,
-                        "subject": "需求提交区规则",
-                        "assignee_id": 1,
-                        "assignee_name": "测试账号",
-                        "created_date": "2020-04-29 12:11:38",
-                        "priority_id": 1,
-                        "deadline": '',
-                        "sort": 0,
-                        "watch": 1,
-                        "tags": [
-                            {
-                                tag_name: '功能需求',
-                                tag_type: 'info'
-                            },
-                        ],
-                    },
-                    {
-                        "issue_id": 23341,
-                        "subject": "需求提交区规则",
-                        "assignee_id": 1,
-                        "assignee_name": "测试账号",
-                        "created_date": "2020-04-29 12:11:38",
-                        "priority_id": 1,
-                        "deadline": '',
-                        "sort": 0,
-                        "watch": 1,
-                        "tags": [
-                            {
-                                tag_name: '功能需求',
-                                tag_type: 'info'
-                            },
-                        ],
-                    },
-                    {
-                        "issue_id": 23341,
-                        "subject": "需求提交区规则",
-                        "assignee_id": 1,
-                        "assignee_name": "测试账号",
-                        "created_date": "2020-04-29 12:11:38",
-                        "priority_id": 1,
-                        "deadline": '',
-                        "sort": 0,
-                        "watch": 1,
-                        "tags": [
-                            {
-                                tag_name: '功能需求',
-                                tag_type: 'info'
-                            },
-                        ],
-                    },
                     {
                         "issue_id": 23341,
                         "subject": "需求提交区规则",
@@ -240,23 +57,6 @@ export const useTaskStore = defineStore('task-store', {
                             },
                         ]
                     },
-                    {
-                        "issue_id": 39031,
-                        "subject": "测试",
-                        "assignee_id": 189,
-                        "assignee_name": "包国强",
-                        "created_date": "2021-09-15 15:00:09",
-                        "priority_id": 1,
-                        "deadline": '',
-                        "sort": 2,
-                        "watch": 0,
-                        "tags": [
-                            {
-                                tag_name: '细节优化',
-                                tag_type: 'success'
-                            },
-                        ]
-                    }
                 ]
             },
             {
@@ -281,23 +81,6 @@ export const useTaskStore = defineStore('task-store', {
                             },
                         ]
                     },
-                    {
-                        "issue_id": 38333,
-                        "subject": "issue-create 接口创建测试标题-2",
-                        "assignee_id": 11,
-                        "assignee_name": "文滔",
-                        "created_date": "2021-08-10 17:38:14",
-                        "priority_id": 1,
-                        "deadline": '',
-                        "sort": 1,
-                        "watch": 0,
-                        "tags": [
-                            {
-                                tag_name: '功能需求',
-                                tag_type: 'info'
-                            },
-                        ]
-                    }
                 ]
             },
             {
@@ -394,8 +177,19 @@ export const useTaskStore = defineStore('task-store', {
                 "user_name": "King",
                 "created_date": "2021-09-03 10:44:37"
             }
-        ]
+        ],
+        status: EnumTaskStatus.unFinished
+
     }),
+    getters: {
+        // filterTask(state){
+        //     return state.tasks.filter(stage => {
+        //         return stage.issues.filter(issue => {
+        //             return issue.status === 
+        //         })
+        //     })
+        // }
+    },
     actions: {
         setAssignee(assignee_name: string, assignee_id: number) {
             this.detail.assignee_name = assignee_name

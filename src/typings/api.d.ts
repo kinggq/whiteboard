@@ -1,6 +1,8 @@
 declare namespace ApiTask {
     type IssueTagType = 'info' | 'success' | 'warning'
 
+    type IssueStatusType = keyof typeof import('@/enum').EnumTaskStatus
+
     interface IssueTag {
         tag_name: string
         tag_type: IssueTagType
@@ -17,6 +19,7 @@ declare namespace ApiTask {
         deadline?: string
         watch?: number
         tags?: IssueTag[]
+        status?: IssueStatusType
     }
 
     interface Stage {
