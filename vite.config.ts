@@ -10,5 +10,6 @@ export default defineConfig({
         '@': resolve(__dirname, 'src')
     }
   },
-  plugins: setupVitePlugins()
+  plugins: setupVitePlugins(),
+  server: {}
 })
