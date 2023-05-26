@@ -11,5 +11,7 @@ export default defineConfig({
     }
   },
   plugins: setupVitePlugins(),
-  server: {}
+  server: {
+    
+  }
 })
