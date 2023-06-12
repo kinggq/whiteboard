@@ -1,10 +1,10 @@
 <template>
     <n-form ref="formRef" :model="model" size="large" :rules="roules" :show-label="false">
         <n-form-item path="username">
-            <n-input v-model:value="model.username" placeholder="123456" />
+            <n-input v-model:value="model.username" />
         </n-form-item>
         <n-form-item path="password">
-            <n-input v-model:value="model.password" type="password" show-password-on="click" placeholder="123456" />
+            <n-input v-model:value="model.password" type="password" show-password-on="click" />
         </n-form-item>
         <n-space :vertical="true" :size="24">
             <n-space justify="space-between">
@@ -37,6 +37,7 @@ const model = reactive({
 const handleSubmit = async () => {
     await formRef.value?.validate()
     const { username, password } = model
+    
     console.log(username, password)
     auth.login(username, password)
 }

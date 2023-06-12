@@ -6,9 +6,11 @@ export function getToken() {
 
 export function getUserInfo() {
     const emptyInfo: Auth.UserInfo = {
-        userId: '',
-        userName: '',
-        userRole: 'user'
+        id: 0,
+        username: '',
+        nick_name: '',
+        phone: '',
+        avatar: ''
     }
     return localStg.get('userInfo') || emptyInfo
 }

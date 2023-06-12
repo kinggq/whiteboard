@@ -1,3 +1,10 @@
+declare namespace ApiAuth {
+    type UserInfo = {
+        user: Auth.UserInfo;
+        token: string;
+    }
+}
+
 declare namespace ApiTask {
     type IssueTagType = 'info' | 'success' | 'warning'
 

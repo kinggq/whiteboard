@@ -5,6 +5,7 @@ import { defineStore } from 'pinia';
 import { unref } from 'vue';
 import { useRouteStore } from '../route';
 import { getToken, getUserInfo, clearAuthStorage } from './helpers';
+import { fetchLogin } from '@/service';
 
 export const useAuthStore = defineStore('auth-store', {
     state: () => ({
@@ -35,29 +36,24 @@ export const useAuthStore = defineStore('auth-store', {
             const route = useRouteStore()
             const { toLoginRedirect } = useRouterPush(false)
             this.loginLoading = true
-            await new Promise(resolve => {
-                setTimeout(() => {
-                    this.loginLoading = false
-                    this.userInfo = {
-                        userId: '001',
-                        userName: 'King',
-                        userRole: 'super'
-                    }
-                    this.token = '1dik32o4f83ndfas923jfja1dfd'
-                    localStg.set('token', this.token)
-                    localStg.set('userInfo', this.userInfo)
-                    resolve([])
-                }, 2000)
-            })
-            console.log(11)
-            await route.initAuthRoute()
-            toLoginRedirect()
-            console.log(window.$notification?.success)
-            window.$notification?.success({
-                title: '登录成功',
-                content: `欢迎回来${this.userInfo.userName}`,
-                duration: 3000
-            })
+            const result = await fetchLogin(username, password)
+            console.log('result:', result)
+            this.loginLoading = false
+            if (!result.error) {
+                this.userInfo = result.data.user;
+                this.token = result.data.token;
+                localStg.set('token', this.token)
+                localStg.set('userInfo', this.userInfo)
+                await route.initAuthRoute()
+                toLoginRedirect()
+                console.log(window.$notification?.success)
+                window.$notification?.success({
+                    title: '登录成功',
+                    content: `欢迎回来${this.userInfo.username}`,
+                    duration: 3000
+                })
+            }
+
         }
     }
 })
