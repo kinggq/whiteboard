@@ -1,10 +1,10 @@
 <template>
     <n-form ref="formRef" :model="model" size="large" :rules="roules" :show-label="false">
         <n-form-item path="username">
-            <n-input v-model:value="model.username" />
+            <n-input v-model:value="model.username" placeholder="admin" />
         </n-form-item>
         <n-form-item path="password">
-            <n-input v-model:value="model.password" type="password" show-password-on="click" />
+            <n-input v-model:value="model.password" placeholder="admin" type="password" show-password-on="click" />
         </n-form-item>
         <n-space :vertical="true" :size="24">
             <n-space justify="space-between">
