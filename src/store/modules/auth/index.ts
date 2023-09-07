@@ -35,15 +35,18 @@ export const useAuthStore = defineStore('auth-store', {
         async login(username: string, password: string) {
             const route = useRouteStore()
             const { toLoginRedirect } = useRouterPush(false)
+
             this.loginLoading = true
-            const result = await fetchLogin(username, password)
-            console.log('result:', result)
-            this.loginLoading = false
-            if (!result.error) {
-                this.userInfo = result.data.user;
-                this.token = result.data.token;
-                localStg.set('token', this.token)
-                localStg.set('userInfo', this.userInfo)
+            const timer = setTimeout(async () => {
+                this.loginLoading = false
+                localStg.set('token', '__TOKEN__')
+                localStg.set('userInfo', {
+                    id: 1,
+                    username: 'King',
+                    nick_name: 'King',
+                    phone: '15611992734',
+                    avatar: 'https://avatars.githubusercontent.com/u/103868381?v=4',
+                })
                 await route.initAuthRoute()
                 toLoginRedirect()
                 console.log(window.$notification?.success)
@@ -52,7 +55,8 @@ export const useAuthStore = defineStore('auth-store', {
                     content: `欢迎回来${this.userInfo.username}`,
                     duration: 3000
                 })
-            }
+                clearTimeout(timer)
+            }, 1000)
 
         }
     }
