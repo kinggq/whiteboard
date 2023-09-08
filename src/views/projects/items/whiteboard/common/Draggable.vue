@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import type { InputInst } from 'naive-ui'
-import vuedraggable from 'vuedraggable'
+import VueDraggable from 'vuedraggable'
 import { useTaskStore } from '@/store'
 
 interface Props {
@@ -22,7 +22,9 @@ async function handleAddTask(stage: ApiTask.Stage) {
 }
 
 function handleBlur() {
-  taskStore.setTask(unref(value), curStage.value!)
+  if (value.value)
+    taskStore.setTask(unref(value), curStage.value!)
+
   curStage.value = undefined
   value.value = ''
 }
@@ -33,7 +35,7 @@ function handleEnter() {
 </script>
 
 <template>
-  <vuedraggable
+  <VueDraggable
     class="flex h-full pb-10px"
     :list="tasks"
     item-key="stages_id"
@@ -44,7 +46,7 @@ function handleEnter() {
       <n-card embedded class="todo-list h-full w-320px mr-12px" content-style="padding: 0px;height: 100%;display: flex;flex-direction: column; padding-bottom: 10px;">
         <slot name="stage-header" v-bind="stage" />
         <n-scrollbar class="flex-1 px-10px">
-          <vuedraggable
+          <VueDraggable
             :list="stage.issues"
             draggable=".task-card"
             item-key="issue_id"
@@ -55,7 +57,7 @@ function handleEnter() {
                 <slot name="issue-content" v-bind="issue" />
               </n-card>
             </template>
-          </vuedraggable>
+          </VueDraggable>
           <n-button v-show="curStage !== stage.stages_id " w-full @click="handleAddTask(stage)">
             <template #icon>
               <n-icon>
@@ -68,13 +70,14 @@ function handleEnter() {
             ref="InputRef"
             v-model:value="value"
             type="text"
+            placeholder="输入标题，回车创建"
             @blur="handleBlur"
             @keyup.enter="handleEnter"
           />
         </n-scrollbar>
       </n-card>
     </template>
-  </vuedraggable>
+  </VueDraggable>
 </template>
 
 <style>
