@@ -7,10 +7,23 @@ import Components from 'unplugin-vue-components/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import IconsResolver from 'unplugin-icons/resolver'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import AutoImport from 'unplugin-auto-import/vite'
 
 export default function unplugin() {
     return [
         DefineOptions(),
+        AutoImport({
+            imports: [
+              'vue',
+              'vue-router',
+              '@vueuse/core',
+            ],
+            dts: true,
+            dirs: [
+              './src/composables',
+            ],
+            vueTemplate: true,
+          }),
         Icons({
             compiler: 'vue3',
             customCollections: {
