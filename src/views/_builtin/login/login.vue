@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { PwdLogin, Register } from './components'
 import { EnumLoginModule } from '@/enum'
+import ThemeMode from '@/layouts/components/GlobalHeader/components/ThemeMode.vue'
 
 interface Props {
   module: EnumType.LoginModuleKey
@@ -23,7 +24,8 @@ const activeModule = computed(() => {
 </script>
 
 <template>
-  <div flex justify-center items-center h-full>
+  <div flex justify-center items-center h-full relative>
+    <ThemeMode absolute right-20px top-20px />
     <n-card max-w-400px min-w-320px rounded-10px>
       <div>
         <h1 text-center>
