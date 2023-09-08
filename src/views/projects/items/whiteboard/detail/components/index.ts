@@ -5,9 +5,9 @@ import Section from './Section/index.vue'
 import CommentActivity from './CommentActivity/index.vue'
 
 export {
-    DetailHeader,
-    Subject,
-    Addition,
-    Section,
-    CommentActivity
+  DetailHeader,
+  Subject,
+  Addition,
+  Section,
+  CommentActivity,
 }

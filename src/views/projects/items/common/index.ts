@@ -4,8 +4,8 @@ import AddMember from './AddMember/index.vue'
 import Setting from './Setting/index.vue'
 
 export {
-    Menu,
-    Sidebar,
-    AddMember,
-    Setting
+  Menu,
+  Sidebar,
+  AddMember,
+  Setting,
 }

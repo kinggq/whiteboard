@@ -3,7 +3,7 @@ import StageHeader from './StageHeader.vue'
 import Issue from './Issue.vue'
 
 export {
-    Draggable,
-    StageHeader,
-    Issue,
+  Draggable,
+  StageHeader,
+  Issue,
 }

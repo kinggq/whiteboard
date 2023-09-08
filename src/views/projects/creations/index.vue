@@ -1,3 +1,3 @@
 <template>
-    <div>创建项目</div>
+  <div>创建项目</div>
 </template>

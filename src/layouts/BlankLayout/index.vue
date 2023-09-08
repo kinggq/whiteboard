@@ -1,3 +1,3 @@
 <template>
-    <div>空白页面</div>
+  <div>空白页面</div>
 </template>

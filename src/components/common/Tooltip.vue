@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PopoverPlacement } from 'naive-ui';
+import type { PopoverPlacement } from 'naive-ui'
 
 interface Props {
   content: string
@@ -10,15 +10,15 @@ interface Props {
 withDefaults(defineProps<Props>(), {
   content: '',
   placement: 'bottom',
-  classs: ''
+  classs: '',
 })
-
 </script>
+
 <template>
   <n-tooltip :placement="placement" trigger="hover">
     <template #trigger>
       <div class="cursor-pointer flex-center" :class="classs">
-        <slot></slot>
+        <slot />
       </div>
     </template>
     {{ content }}

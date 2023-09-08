@@ -1,21 +1,21 @@
-<template>
-    <global-card>
-        <div>
-            <ProjectListHeader /> 
-            <ProjectListContent /> 
-            <ProjectListFooter /> 
-        </div>
-    </global-card>
-</template>
-    
 <script setup lang='ts'>
-import GlobalCard from '@/components/common/GlobalCard.vue'
 import {
-    ProjectListHeader,
-    ProjectListContent,
-    ProjectListFooter
+  ProjectListContent,
+  ProjectListFooter,
+  ProjectListHeader,
 } from './components'
 </script>
+
+<template>
+  <GlobalCard>
+    <div>
+      <ProjectListHeader />
+      <ProjectListContent />
+      <ProjectListFooter />
+    </div>
+  </GlobalCard>
+</template>
+
 <style lang="less" scoped>
-    
+
 </style>
