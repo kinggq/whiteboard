@@ -20,7 +20,7 @@ type ErrorStatus = keyof typeof ERROR_STATUS;
 export function handleAxiosError(axiosError: AxiosError) {
   const error: Service.RequestError = {
     type: 'axios',
-    ret: DEFAULT_REQUEST_ERROR_CODE,
+    code: DEFAULT_REQUEST_ERROR_CODE,
     msg: DEFAULT_REQUEST_ERROR_MSG
   };
 
@@ -64,7 +64,7 @@ export function handleAxiosError(axiosError: AxiosError) {
 export function handleResponseError(response: AxiosResponse) {
   const error: Service.RequestError = {
     type: 'axios',
-    ret: DEFAULT_REQUEST_ERROR_CODE,
+    code: DEFAULT_REQUEST_ERROR_CODE,
     msg: DEFAULT_REQUEST_ERROR_MSG
   };
 
@@ -91,7 +91,7 @@ export function handleBackendError(backendResult: Record<string, any>, config: S
   const { codeKey, msgKey } = config;
   const error: Service.RequestError = {
     type: 'backend',
-    ret: backendResult[codeKey],
+    code: backendResult[codeKey],
     msg: backendResult[msgKey]
   };
 

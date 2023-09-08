@@ -10,7 +10,8 @@ export function getUserInfo() {
         username: '',
         nick_name: '',
         phone: '',
-        avatar: ''
+        avatar: '',
+        user_role: 'admin'
     }
     return localStg.get('userInfo') || emptyInfo
 }

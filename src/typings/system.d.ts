@@ -30,7 +30,7 @@ declare namespace Service {
         /** 请求服务的错误类型 */
         type: RequestErrorType;
         /** 错误码 */
-        code: number;
+        code: string;
         /** 错误信息 */
         msg: string;
     }

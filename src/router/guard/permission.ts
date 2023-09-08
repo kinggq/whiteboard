@@ -19,7 +19,7 @@ export async function createPermissionGuard(
     const permissions = to.meta.permissions || []
     const needLogin = Boolean(permissions.length)
  
-    const hasPermission = !permissions.length || permissions.includes(auth.userInfo.userRole)
+    const hasPermission = !permissions.length || permissions.includes(auth.userInfo?.user_role)
    console.log(isLogin)
     const actions: Common.StrategyAction[] = [
         [

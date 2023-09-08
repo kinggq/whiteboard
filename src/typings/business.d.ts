@@ -4,7 +4,7 @@ declare namespace Auth {
     type UserInfo = {
         id: number
         username: string
-        // userRole: RoleType
+        user_role: RoleType
         nick_name: string
         phone: string
         avatar: string

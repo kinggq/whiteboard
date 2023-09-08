@@ -46,6 +46,7 @@ export const useAuthStore = defineStore('auth-store', {
                     nick_name: 'King',
                     phone: '15611992734',
                     avatar: 'https://avatars.githubusercontent.com/u/103868381?v=4',
+                    user_role: 'admin'
                 })
                 await route.initAuthRoute()
                 toLoginRedirect()
