@@ -6,7 +6,7 @@
                 :size="30"
                 src="https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg"
             />
-            <span>{{ auth.userInfo.userName }}</span>
+            <span>{{ auth.userInfo.username }}</span>
         </n-space>
     </n-dropdown>
 </template>

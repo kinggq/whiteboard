@@ -90,6 +90,7 @@ declare module '@vue/runtime-core' {
     NTag: typeof import('naive-ui')['NTag']
     NThing: typeof import('naive-ui')['NThing']
     NTransfer: typeof import('naive-ui')['NTransfer']
+    Plum: typeof import('./src/components/common/Plum.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SvgIcon: typeof import('./src/components/common/SvgIcon.vue')['default']

@@ -16,6 +16,7 @@
                 </main>
             </div>
         </n-card>
+        <plum></plum>
     </div>
 </template>
 <script lang="ts" setup>

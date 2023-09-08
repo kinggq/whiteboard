@@ -5,6 +5,7 @@ import { defineStore } from 'pinia';
 import { unref } from 'vue';
 import { useRouteStore } from '../route';
 import { getToken, getUserInfo, clearAuthStorage } from './helpers';
+import { fetchLogin } from '@/service';
 
 export const useAuthStore = defineStore('auth-store', {
     state: () => ({
@@ -34,30 +35,30 @@ export const useAuthStore = defineStore('auth-store', {
         async login(username: string, password: string) {
             const route = useRouteStore()
             const { toLoginRedirect } = useRouterPush(false)
+
             this.loginLoading = true
-            await new Promise(resolve => {
-                setTimeout(() => {
-                    this.loginLoading = false
-                    this.userInfo = {
-                        userId: '001',
-                        userName: 'King',
-                        userRole: 'super'
-                    }
-                    this.token = '1dik32o4f83ndfas923jfja1dfd'
-                    localStg.set('token', this.token)
-                    localStg.set('userInfo', this.userInfo)
-                    resolve([])
-                }, 2000)
-            })
-            console.log(11)
-            await route.initAuthRoute()
-            toLoginRedirect()
-            console.log(window.$notification?.success)
-            window.$notification?.success({
-                title: '登录成功',
-                content: `欢迎回来${this.userInfo.userName}`,
-                duration: 3000
-            })
+            const timer = setTimeout(async () => {
+                this.loginLoading = false
+                localStg.set('token', '__TOKEN__')
+                localStg.set('userInfo', {
+                    id: 1,
+                    username: 'King',
+                    nick_name: 'King',
+                    phone: '15611992734',
+                    avatar: 'https://avatars.githubusercontent.com/u/103868381?v=4',
+                    user_role: 'admin'
+                })
+                await route.initAuthRoute()
+                toLoginRedirect()
+                console.log(window.$notification?.success)
+                window.$notification?.success({
+                    title: '登录成功',
+                    content: `欢迎回来${this.userInfo.username}`,
+                    duration: 3000
+                })
+                clearTimeout(timer)
+            }, 1000)
+
         }
     }
 })

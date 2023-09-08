@@ -18,7 +18,7 @@
 
 ## 预览
 
-[whiteboard](https://kinggq.github.io/whiteboard/)
+[whiteboard](https://whiteboard-chi.vercel.app/)
 
 ## 代码仓库
 
