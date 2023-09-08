@@ -1,3 +1,3 @@
 <template>
-    项目
+  项目
 </template>

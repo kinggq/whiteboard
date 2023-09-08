@@ -1,3 +1,3 @@
 <template>
-    <div>全屏</div>
+  <div>全屏</div>
 </template>

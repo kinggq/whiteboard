@@ -6,10 +6,10 @@ import TaskField from './TaskField.vue'
 import FilterBase from './FilterBase.vue'
 
 export {
-    AddList,
-    UnfinishedTask,
-    Filter,
-    Sort,
-    TaskField,
-    FilterBase
+  AddList,
+  UnfinishedTask,
+  Filter,
+  Sort,
+  TaskField,
+  FilterBase,
 }

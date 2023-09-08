@@ -1,3 +1,3 @@
 <template>
-    <div>uncompleted page</div>
+  <div>uncompleted page</div>
 </template>

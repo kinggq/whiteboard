@@ -6,10 +6,10 @@ import ThemeMode from './ThemeMode.vue'
 import UserAvatar from './UserAvatar.vue'
 
 export {
-    AppLogo,
-    AppMessage,
-    FullScreen,
-    GlobalSearch,
-    ThemeMode,
-    UserAvatar
+  AppLogo,
+  AppMessage,
+  FullScreen,
+  GlobalSearch,
+  ThemeMode,
+  UserAvatar,
 }

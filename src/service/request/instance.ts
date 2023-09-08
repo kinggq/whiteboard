@@ -8,7 +8,8 @@ import {
   handleServiceResult,
   transformRequestData,
 //   USER_TOKEN
-} from '@/utils';
+} from '@/utils'
+
 // import { handleRefreshToken } from './helpers';
 
 /**
@@ -16,9 +17,9 @@ import {
  * @author Soybean<honghuangdc@gmail.com>
  */
 export default class CustomAxiosInstance {
-  instance: AxiosInstance;
+  instance: AxiosInstance
 
-  backendConfig: Service.BackendResultConfig;
+  backendConfig: Service.BackendResultConfig
 
   /**
    *
@@ -31,64 +32,62 @@ export default class CustomAxiosInstance {
       codeKey: 'code',
       dataKey: 'data',
       msgKey: 'msg',
-      successCode: 0
-    }
+      successCode: 0,
+    },
   ) {
-    this.backendConfig = backendConfig;
-    this.instance = axios.create(axiosConfig);
-    this.setInterceptor();
+    this.backendConfig = backendConfig
+    this.instance = axios.create(axiosConfig)
+    this.setInterceptor()
   }
 
   /** 设置请求拦截器 */
   setInterceptor() {
     this.instance.interceptors.request.use(
-      async config => {
-        const handleConfig = { ...config };
+      async (config) => {
+        const handleConfig = { ...config }
         if (handleConfig.headers) {
           // 数据转换
-          const contentType = handleConfig.headers['Content-Type'] as string;
-          handleConfig.data = await transformRequestData(handleConfig.data, contentType);
+          const contentType = handleConfig.headers['Content-Type'] as string
+          handleConfig.data = await transformRequestData(handleConfig.data, contentType)
           // 设置token
-          console.log('1111:', handleConfig.data)
+          // console.log('1111:', handleConfig.data)
         //   handleConfig.headers.Authorization =  `Bearer ${USER_TOKEN}`;
         }
-        return handleConfig;
+        return handleConfig
       },
       (axiosError: AxiosError) => {
-        const error = handleAxiosError(axiosError);
-        return handleServiceResult(error, null);
-      }
-    );
+        const error = handleAxiosError(axiosError)
+        return handleServiceResult(error, null)
+      },
+    )
     this.instance.interceptors.response.use(
-      async response => {
-        const { status } = response;
+      async (response) => {
+        const { status } = response
         if (status === 200 || status < 300 || status === 304) {
-          const backend = response.data;
-          console.log('backend', backend)
-          const { codeKey, dataKey, successCode } = this.backendConfig;
+          const backend = response.data
+          const { codeKey, dataKey, successCode } = this.backendConfig
           // 请求成功
-          if (backend[codeKey] === successCode) {
-            return handleServiceResult(null, backend[dataKey]);
-          }
+          if (backend[codeKey] === successCode)
+            return handleServiceResult(null, backend[dataKey])
 
-        //   // token失效, 刷新token
-        //   if (REFRESH_TOKEN_CODE.includes(backend[codeKey])) {
-        //     const config = await handleRefreshToken(response.config);
-        //     if (config) {
-        //       return this.instance.request(config);
-        //     }
-        //   }
+          //   // token失效, 刷新token
+          //   if (REFRESH_TOKEN_CODE.includes(backend[codeKey])) {
+          //     const config = await handleRefreshToken(response.config);
+          //     if (config) {
+          //       return this.instance.request(config);
+          //     }
+          //   }
 
-          const error = handleBackendError(backend, this.backendConfig);
-          return handleServiceResult(error, null);
+          const error = handleBackendError(backend, this.backendConfig)
+          return handleServiceResult(error, null)
         }
-        const error = handleResponseError(response);
-        return handleServiceResult(error, null);
+        const error = handleResponseError(response)
+        return handleServiceResult(error, null)
       },
       (axiosError: AxiosError) => {
-        const error = handleAxiosError(axiosError);
-        return handleServiceResult(error, null);
-      }
-    );
+        const error = handleAxiosError(axiosError)
+        return handleServiceResult(error, null)
+      },
+    )
   }
 }

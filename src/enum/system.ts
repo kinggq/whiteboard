@@ -1,4 +1,4 @@
 export enum EnumLayoutComponentName {
-    basic = 'basic-layout',
-    blank = 'blank-layout',
+  basic = 'basic-layout',
+  blank = 'blank-layout',
 }

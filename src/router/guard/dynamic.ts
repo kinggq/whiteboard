@@ -1,41 +1,41 @@
-import { useAuthStore, useRouteStore } from '@/store'
-import { localStg } from '@/utils'
-import { NavigationGuardNext, RouteLocationNormalized } from 'vue-router'
+import type { NavigationGuardNext, RouteLocationNormalized } from 'vue-router'
 import { routeName } from '..'
+import { useRouteStore } from '@/store'
+import { localStg } from '@/utils'
 
 export async function createDynamicRouteGuard(
-    to: RouteLocationNormalized,
-    from: RouteLocationNormalized,
-    next: NavigationGuardNext
+  to: RouteLocationNormalized,
+  from: RouteLocationNormalized,
+  next: NavigationGuardNext,
 ) {
-    const route = useRouteStore()
-    const isLogin = Boolean(localStg.get('token'))
-    
-    console.log(to)
-    if (!route.isInitAuthRoute) {
-        if (!isLogin) {
-            const toName = to.name as AuthRoute.AllRouteKey
-            if (route.isValidConstantRoute(toName) && !to.meta.requireAuth) {
-                next()
-            } else {
-                const redirect = to.fullPath
-                next({ name: routeName('login'), query: { redirect } })
-            }
-            return false
-        }
+  const route = useRouteStore()
+  const isLogin = Boolean(localStg.get('token'))
 
-        await route.initAuthRoute()
-
-        if(to.name === routeName('not-found')) {
-            const path = to.redirectedFrom?.name === 'root' ? '/' : to.fullPath
-            next({ path, replace: true, query: to.query, hash: to.hash })
-            return false
-        }
+  if (!route.isInitAuthRoute) {
+    if (!isLogin) {
+      const toName = to.name as AuthRoute.AllRouteKey
+      if (route.isValidConstantRoute(toName) && !to.meta.requireAuth) {
+        next()
+      }
+      else {
+        const redirect = to.fullPath
+        next({ name: routeName('login'), query: { redirect } })
+      }
+      return false
     }
 
-    if(to.name === routeName('not-found')) {
-        next({ path: routeName('404'), replace: true })
-        return false
+    await route.initAuthRoute()
+
+    if (to.name === routeName('not-found')) {
+      const path = to.redirectedFrom?.name === 'root' ? '/' : to.fullPath
+      next({ path, replace: true, query: to.query, hash: to.hash })
+      return false
     }
-    return true
+  }
+
+  if (to.name === routeName('not-found')) {
+    next({ path: routeName('404'), replace: true })
+    return false
+  }
+  return true
 }
