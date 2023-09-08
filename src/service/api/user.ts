@@ -1,5 +1,5 @@
-import { request } from '@/service/request'
+import { httpClient } from './http'
 
 export function fetchLogin(username: string, password: string) {
-  return request.post<ApiAuth.UserInfo>('/base/login', { username, password })
+  return httpClient.post<ApiAuth.UserInfo>('/base/login', { username, password })
 }
