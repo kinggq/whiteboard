@@ -13,15 +13,8 @@
     cursor-pointer
     hover-rd-6px
     hover:bg="gray/10"
-
-    class="grid-content"
+    transition-400
   >
     <slot />
   </div>
 </template>
-
-<style scoped>
-.grid-content {
-  transition: all .3s ease;
-}
-</style>
