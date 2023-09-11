@@ -12,12 +12,16 @@
     items-center
     cursor-pointer
     hover-rd-6px
-    class="hover-bg-[#eee] dark:hover:bg-[#333]"
+    hover:bg="gray/10"
+
+    class="grid-content"
   >
     <slot />
   </div>
 </template>
 
-<style>
-
+<style scoped>
+.grid-content {
+  transition: all .3s ease;
+}
 </style>

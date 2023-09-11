@@ -14,7 +14,6 @@ function toDetail() {
 }
 
 function handlePriority() {
-  console.log('priority')
 }
 
 const priorityBg = computed(
