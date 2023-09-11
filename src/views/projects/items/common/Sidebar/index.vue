@@ -12,7 +12,7 @@ import {
 <template>
   <div w-full px-20px pt-10px flex-between>
     <AddList />
-    <div flex>
+    <div flex="~ gap2">
       <UnfinishedTask />
       <Filter />
       <Sort />
