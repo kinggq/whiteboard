@@ -71,7 +71,7 @@ function handleCreateList(stages_name: string, type: 'push' | 'unshift') {
               :group="{ name: 'g2' }"
             >
               <template #item="{ element: issue }">
-                <n-card class="task-card mb-10px" content-style="padding: 10px">
+                <n-card class="task-card mb-10px" content-style="padding: 0px">
                   <slot name="issue-content" v-bind="issue" />
                 </n-card>
               </template>
