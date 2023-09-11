@@ -9,6 +9,8 @@ interface State {
   annexFile: ApiTask.IssueAnnexFile[]
   comments: ApiTask.IssueComment[]
   status: StatusType
+  showFirstCreate: boolean
+  showLastCreate: boolean
 }
 
 export const useTaskStore = defineStore('task-store', {
@@ -179,7 +181,8 @@ export const useTaskStore = defineStore('task-store', {
       },
     ],
     status: EnumTaskStatus.unFinished,
-
+    showFirstCreate: false,
+    showLastCreate: false,
   }),
   getters: {
     // filterTask(state){
