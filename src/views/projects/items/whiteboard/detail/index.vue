@@ -1,4 +1,6 @@
 <script setup lang='ts'>
+import '@wangeditor/editor/dist/css/style.css'
+import { Editor, Toolbar } from '@wangeditor/editor-for-vue'
 import {
   Addition,
   CommentActivity,
@@ -11,6 +13,17 @@ const { routerBack } = useRouterPush()
 
 function onMaskClick() {
   routerBack()
+}
+
+const valueHtml = ref('<p>hello</p>')
+const editorConfig = { placeholder: '请输入内容...' }
+const editorRef = shallowRef()
+const toolbarConfig = ref({
+  excludeKeys: ['fullScreen', 'code', 'group-video', 'codeBlock', 'bulletedList', 'numberedList', 'blockquote', 'bold', 'italic', 'todo', 'insertImage', 'insertLink', 'emotion'],
+})
+
+function handleCreated(val: string) {
+  editorRef.value = val
 }
 </script>
 
@@ -30,6 +43,20 @@ function onMaskClick() {
           <Section />
         </div>
         <CommentActivity mt-20px />
+      </div>
+      <div absolute bottom-0 w-full>
+        <Toolbar
+          ref="editorRef"
+          mode="default"
+          style="border-bottom: 1px solid #ccc"
+        />
+        <Editor
+          v-model="valueHtml"
+          style="height: 100px; overflow-y: hidden;"
+          :default-config="editorConfig"
+          mode="default"
+          @created="handleCreated"
+        />
       </div>
     </n-card>
   </n-modal>
