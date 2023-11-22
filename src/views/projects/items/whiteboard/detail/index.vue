@@ -44,6 +44,7 @@ function handleCreated(val: string) {
         </div>
         <CommentActivity mt-20px />
       </div>
+
       <div absolute bottom-0 w-full>
         <Toolbar
           ref="editorRef"
